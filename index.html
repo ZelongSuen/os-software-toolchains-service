@@ -1,0 +1,3078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Software, Open-Source Toolchains & Educational Perks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Base Architecture Palette */
+      --bg-page: #FBF9F5;
+      --card-bg: #FFFEFC;
+      --card-border: #E8E5DD;
+      --card-border-hover: #D0CCC2;
+      --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      
+      /* Editorial Ink Spectrum */
+      --ink-primary: #1C1E21;
+      --ink-secondary: #383D43;
+      --ink-muted: #6C727A;
+      --ink-accent: #2C5270;
+      
+      /* Typography */
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-heading: 'JetBrains Mono', 'Geist Mono', monospace;
+      --font-mono: 'Geist Mono', Menlo, Monaco, monospace;
+      
+      /* Advisory / Amber Palette */
+      --warning-bg: #FDF9EE;
+      --warning-bar: #B88528;
+      --warning-ink: #3B2A08;
+      --warning-border: #EEDEB6;
+      
+      /* Inverted Satin Category Pills */
+      --pill-official: #2C5270;   /* Institutional Navy */
+      --pill-utility: #21617A;    /* Engineering Cyan */
+      --pill-academic: #633B9E;   /* Logic Amethyst */
+      --pill-system: #754E33;     /* System Ochre */
+      --pill-recall: #31525B;     /* Memory Slate */
+      --pill-media: #A34338;      /* Terracotta Studio */
+      --pill-security: #276345;   /* Moss Cryptographic Green */
+      --pill-focus: #B88528;      /* Focus Amber */
+      --pill-collab: #385E72;     /* Collaboration Steel */
+
+      /* Accordion Elements */
+      --btn-bg: #F4F1EA;
+      --btn-border: #E2DDD2;
+      --btn-hover: #EAE5D9;
+      --quote-bar: #2D6A4F;
+      --quote-bg: #F3F8F5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--ink-primary);
+      font-family: var(--font-body);
+      font-size: 14.5px;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 48px 24px 96px;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    /* Header Section */
+    .header-block {
+      border-bottom: 2px solid var(--ink-primary);
+      padding-bottom: 20px;
+      margin-bottom: 32px;
+    }
+
+    .meta-preheader {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      color: var(--ink-primary);
+      margin-bottom: 8px;
+    }
+
+    .sub-title {
+      font-size: 14px;
+      color: var(--ink-secondary);
+      font-weight: 400;
+    }
+
+    /* Advisory & Pre-Flight Panel */
+    .advisory-panel {
+      background-color: var(--warning-bg);
+      border: 1px solid var(--warning-border);
+      border-left: 4px solid var(--warning-bar);
+      padding: 16px 20px;
+      margin-bottom: 36px;
+      border-radius: 2px;
+    }
+
+    .advisory-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--warning-ink);
+      margin-bottom: 6px;
+    }
+
+    .advisory-body {
+      font-size: 13.5px;
+      color: var(--warning-ink);
+      line-height: 1.6;
+    }
+
+    /* Table of Contents */
+    .toc-section {
+      border: 1px solid var(--card-border);
+      padding: 20px 24px;
+      margin-bottom: 40px;
+      border-radius: 3px;
+    }
+
+    .toc-header {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-primary);
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-item {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      font-size: 13.5px;
+    }
+
+    .toc-link {
+      color: var(--ink-primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .toc-link:hover {
+      color: var(--ink-accent);
+      text-decoration: underline;
+    }
+
+    .toc-leader {
+      flex: 1;
+      border-bottom: 1px dotted var(--card-border-hover);
+      margin: 0 10px;
+      transform: translateY(-3px);
+    }
+
+    .toc-ref {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--ink-muted);
+    }
+
+    /* Section Subheaders */
+    .section-header {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink-primary);
+      margin: 52px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+
+    .section-index {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--ink-muted);
+      font-weight: 400;
+    }
+
+    .subsection-header {
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-accent);
+      margin: 28px 0 14px;
+      padding-left: 2px;
+    }
+
+    /* Cards Structure */
+    .resource-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .resource-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--card-shadow);
+      border-radius: 4px;
+      padding: 22px 24px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .resource-card:hover {
+      border-color: var(--card-border-hover);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      color: #FFFFFF;
+      line-height: 1.4;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .pill-official { background-color: var(--pill-official); }
+    .pill-utility { background-color: var(--pill-utility); }
+    .pill-academic { background-color: var(--pill-academic); }
+    .pill-system { background-color: var(--pill-system); }
+    .pill-recall { background-color: var(--pill-recall); }
+    .pill-media { background-color: var(--pill-media); }
+    .pill-security { background-color: var(--pill-security); }
+    .pill-focus { background-color: var(--pill-focus); }
+    .pill-collab { background-color: var(--pill-collab); }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+    }
+
+    .card-link {
+      color: var(--ink-primary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-link:hover {
+      color: var(--ink-accent);
+      text-decoration: underline;
+    }
+
+    /* Accordion Toggle Button */
+    .toggle-btn {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--ink-secondary);
+      background-color: var(--btn-bg);
+      border: 1px solid var(--btn-border);
+      padding: 4px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+      user-select: none;
+    }
+
+    .toggle-btn:hover {
+      background-color: var(--btn-hover);
+      border-color: #D2CDC0;
+    }
+
+    .card-summary {
+      font-size: 14px;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+
+    /* Inline Meta Parameters */
+    .card-meta-line {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .meta-tag {
+      color: var(--ink-secondary);
+    }
+
+    .meta-label {
+      color: var(--ink-muted);
+      margin-right: 4px;
+    }
+
+    /* Accordion Drawer Content */
+    .accordion-content {
+      display: none;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .resource-card.is-expanded .accordion-content {
+      display: block;
+    }
+
+    .guide-quote {
+      background-color: var(--quote-bg);
+      border-left: 3px solid var(--quote-bar);
+      padding: 12px 16px;
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      border-radius: 0 2px 2px 0;
+    }
+
+    .guide-subtitle {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink-primary);
+      margin: 18px 0 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .guide-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .guide-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .guide-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--ink-muted);
+    }
+
+    .guide-list strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    .direct-url {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--ink-accent);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    .direct-url:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 24px 16px 64px;
+      }
+      .card-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .toggle-btn {
+        align-self: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Header Section -->
+    <header class="header-block">
+      <div class="meta-preheader">
+        <span>BCC Basic Needs Center // Digital Academic Infrastructure</span>
+        <span>Version 2026.10</span>
+      </div>
+      <h1 class="main-title">Academic Software, Open-Source Toolchains & Educational Perks</h1>
+      <p class="sub-title">A complete, verified repository of educational benefits, open-source computational systems, and privacy-first local tools for undergraduate and community college researchers.</p>
+    </header>
+
+    <!-- Advisory / Pre-Flight Panel -->
+    <section class="advisory-panel">
+      <div class="advisory-title">
+        <span>⚠ Notice on Educational Benefits & License Renewals</span>
+      </div>
+      <p class="advisory-body">
+        The resources below are official academic benefits provided directly by software developers and institutions—not public assistance. Access requires standard student verification using an active .edu email, student ID, or portals like SheerID and GitHub Global Campus. Always review each platform's post-graduation and re-verification policies. Many services require annual re-enrollment, while some may automatically transition to full-priced commercial subscriptions if a payment method is attached. Set a calendar reminder before the expiration date to review or cancel licenses you no longer need.
+      </p>
+    </section>
+
+    <!-- Table of Contents -->
+    <nav class="toc-section">
+      <div class="toc-header">Table of Contents // System Index</div>
+      <ul class="toc-list">
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-official-perks">§ 1.0 Student Identity & Official Educational Perks</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">14 items</span>
+        </li>
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-essential-utilities">§ 2.0 Essential Utilities & Daily Productivity Tasks</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">18 items</span>
+        </li>
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-academic-research">§ 3.0 Academic Research & Document Production</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">10 items</span>
+        </li>
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-desktop-workflow">§ 4.0 Desktop & Workflow Enhancement (macOS & Windows)</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">19 items</span>
+        </li>
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-knowledge-recall">§ 5.0 Knowledge Management & Active Recall</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">15 items</span>
+        </li>
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-media-production">§ 6.0 Media Production & File Conversion</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">5 items</span>
+        </li>
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-privacy-security">§ 7.0 Privacy, Security & Data Ownership</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">5 items</span>
+        </li>
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-digital-wellbeing">§ 8.0 Digital Wellbeing, Focus & Anti-Distraction</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">5 items</span>
+        </li>
+        <li class="toc-item">
+          <a class="toc-link" href="#sec-group-projects">§ 9.0 Group Projects & Lightweight Collaboration</a>
+          <span class="toc-leader"></span>
+          <span class="toc-ref">5 items</span>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- SECTION 1.0: OFFICIAL EDUCATIONAL PERKS -->
+    <div class="section-header" id="sec-official-perks">
+      <span class="section-index">§ 1.0</span>
+      <span>Student Identity & Official Educational Perks</span>
+    </div>
+
+    <div class="resource-list">
+
+      <!-- Item 1: NYT & WSJ -->
+      <article class="resource-card" id="card-nyt-wsj">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Academic Pass</span>
+            <span class="card-title">
+              <a href="https://myaccount.nytimes.com/verification/edupass" target="_blank" rel="noopener noreferrer" class="card-link">The New York Times & The Wall Street Journal ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-nyt-wsj')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Institutional campus passes providing unrestricted access to real-time financial market analytics, corporate earnings reports, and historical news archives.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free via Campus Library</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / iOS / Android / Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: The New York Times All Access Commercial Subscription (approx. $50–$120/year) and The Wall Street Journal Standard Subscription (approx. $120–$400+/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Complete Paywall Removal:</strong> Most public university and community college libraries provide institutional site licenses that completely unlock unrestricted digital reading access simply by registering with an active school email.</li>
+            <li><strong>Authoritative Empirical & Primary Sources:</strong> Grants full access to real-time financial market analytics, corporate earnings reports, and historical news archives dating back to 1851 (TimesMachine) to support economics, social science, and general coursework research.</li>
+          </ul>
+          <a href="https://myaccount.nytimes.com/verification/edupass" target="_blank" rel="noopener noreferrer" class="direct-url">nytimes.com/verification/edupass ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 2: GitHub Student Pack -->
+      <article class="resource-card" id="card-github-pack">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Developer Suite</span>
+            <span class="card-title">
+              <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="card-link">GitHub Student Developer Pack ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-github-pack')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          The premier developer package granting verified students complimentary access to professional development software, generative coding tools, and cloud credits.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">100% Free</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / Web & IDE Extensions</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: JetBrains All Products Pack ($289+/year), GitHub Copilot ($100/year), cloud VPS plans ($100–$300+), and custom domain registrations ($15–$30/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Unified Coding and AI Workflow:</strong> Free GitHub Pro status alongside full complimentary access to GitHub Copilot for contextual coding, technical writing, and debugging within editors like VS Code.</li>
+            <li><strong>Professional-Grade IDE Access:</strong> Full educational licenses for JetBrains development environments, including IntelliJ IDEA Ultimate, PyCharm Professional, and WebStorm.</li>
+            <li><strong>Zero-Cost Deployment Infrastructure:</strong> Complimentary .me domain name and SSL certificate from Namecheap, paired with student cloud vouchers (e.g., Azure for Students) to host portfolios and course projects.</li>
+          </ul>
+          <a href="https://education.github.com/pack" target="_blank" rel="noopener noreferrer" class="direct-url">education.github.com/pack ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 3: Notion for Education -->
+      <article class="resource-card" id="card-notion-edu">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Knowledge Base</span>
+            <span class="card-title">
+              <a href="https://www.notion.so/product/notion-for-education" target="_blank" rel="noopener noreferrer" class="card-link">Notion for Education (Plus Plan Upgrade) ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-notion-edu')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Automated account tier upgrade unlocking relational databases, project trackers, and lecture note repositories without file upload limitations.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free ($120/yr Value)</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / iOS / Android / Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Notion Plus Commercial Tier (approx. $120/year or $10/month) and Evernote Premium (approx. $129.99/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Unrestricted File Uploads:</strong> Removes the default 5MB file upload ceiling, allowing you to attach high-resolution lecture slides, academic PDFs, datasets, and seminar audio directly to your workspace.</li>
+            <li><strong>Unlimited Blocks and Pages:</strong> Removes all page-building constraints so you can organize multi-semester course notebooks, syllabi, reading logs, and research projects in one connected workspace.</li>
+            <li><strong>30-Day Version History:</strong> Automatically preserves comprehensive document revision logs for 30 days, preventing accidental loss of coursework or draft iterations.</li>
+          </ul>
+          <a href="https://www.notion.so/product/notion-for-education" target="_blank" rel="noopener noreferrer" class="direct-url">notion.so/product/notion-for-education ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 4: Campus Enterprise Suites -->
+      <article class="resource-card" id="card-campus-suites">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Productivity Suite</span>
+            <span class="card-title">
+              <a href="https://portal.office.com" target="_blank" rel="noopener noreferrer" class="card-link">Microsoft 365 & Google Workspace for Education ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-campus-suites')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Campus SSO licenses enabling native desktop installations of standard productivity apps and large institutional cloud storage allocations.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free via Campus SSO</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / iOS / Android / Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Microsoft 365 Personal / Family Subscription ($70–$100/year) and Google One 2TB Cloud Storage ($99.99/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Native Desktop Software Installations:</strong> Lets you activate desktop editions of Word, Excel, and PowerPoint on up to five personal devices using your campus single sign-on (SSO), ensuring full formatting compatibility when submitting work.</li>
+            <li><strong>Generous Academic Cloud Storage:</strong> Provides between 100GB and 1TB+ of managed OneDrive or Google Drive capacity for automated document sync, project collaboration, and off-site homework backups.</li>
+          </ul>
+          <a href="https://portal.office.com" target="_blank" rel="noopener noreferrer" class="direct-url">portal.office.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 5: Zoom for Education -->
+      <article class="resource-card" id="card-zoom-edu">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Conferencing</span>
+            <span class="card-title">
+              <a href="https://zoom.us" target="_blank" rel="noopener noreferrer" class="card-link">Zoom for Education (Institutional Campus License) ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-zoom-edu')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Enterprise video conferencing licenses removing standard meeting duration caps for student organizations, study sessions, and office hours.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free via Institution</strong></span>
+          <span><span class="meta-label">Limit:</span><span class="meta-tag">Up to 30 Hours / 300 Attendees</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Zoom Pro Commercial Subscription (approx. $159.90/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>No 40-Minute Cutoffs:</strong> Eliminates basic meeting limits, allowing uninterrupted group sessions, study panels, and remote club meetings for up to 30 continuous hours.</li>
+            <li><strong>Academic Collaboration Tools:</strong> Supports up to 300 concurrent attendees with integrated breakout rooms, live automated transcription, and secure cloud recording capabilities.</li>
+          </ul>
+          <a href="https://zoom.us" target="_blank" rel="noopener noreferrer" class="direct-url">zoom.us ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 6: 1Password for Students -->
+      <article class="resource-card" id="card-1password">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Security</span>
+            <span class="card-title">
+              <a href="https://1password.com/for-students" target="_blank" rel="noopener noreferrer" class="card-link">1Password for Students ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-1password')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Zero-knowledge credential protection and two-factor authentication (2FA) generation across devices, safeguarding university research and identity records.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / iOS / Android / Extensions</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: 1Password Individual/Family Subscription ($36–$60/year) and Dashlane Premium ($60/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>End-to-End Credential Protection:</strong> Secures campus portal logins, library research databases, and student accounts behind zero-knowledge encryption, auto-filling credentials securely across all your devices.</li>
+            <li><strong>Integrated Two-Factor Authentication (2FA):</strong> Features a built-in authenticator for generating time-based one-time passcodes (TOTP) and a secure vault for identity documents, keeping you protected when logging in from shared lab computers.</li>
+          </ul>
+          <a href="https://1password.com/for-students" target="_blank" rel="noopener noreferrer" class="direct-url">1password.com/for-students ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 7: Figma for Education -->
+      <article class="resource-card" id="card-figma">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Design & UI</span>
+            <span class="card-title">
+              <a href="https://www.figma.com/education/" target="_blank" rel="noopener noreferrer" class="card-link">Figma for Education (Professional Plan Access) ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-figma')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Collaborative interface design and interactive prototyping software unlocking unlimited projects, shared component libraries, and Dev Mode.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free (2-Year Renewals)</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Web / iPadOS</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Figma Professional Commercial Tier ($144–$180/year) and Sketch Commercial License ($120/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Unrestricted Project Workspaces:</strong> Removes the free tier limitation of three project files, allowing students to create unlimited active canvases, collaborative design files, and complete revision histories.</li>
+            <li><strong>Presentation & Interactive Prototyping:</strong> Unlocks full interactive design workflows, Dev Mode for inspecting front-end specifications, and shared component libraries suitable for academic posters, presentation slide decks, and team project prototypes.</li>
+            <li><strong>Generous Verification Window:</strong> Once verified through SheerID, educational access remains active for two full years and can be renewed as long as student enrollment continues.</li>
+          </ul>
+          <a href="https://www.figma.com/education/" target="_blank" rel="noopener noreferrer" class="direct-url">figma.com/education ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 8: Autodesk Education Community -->
+      <article class="resource-card" id="card-autodesk">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Engineering</span>
+            <span class="card-title">
+              <a href="https://www.autodesk.com/education/edu-software/overview" target="_blank" rel="noopener noreferrer" class="card-link">Autodesk Education Community ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-autodesk')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Standalone full commercial licenses of AutoCAD, Fusion 360, Revit, and Maya for STEM and architecture coursework without licensing costs.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free for Students</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: AutoCAD ($1,975/year) and Fusion 360 / Revit / Maya Commercial Tiers ($545–$2,250/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Industry-Standard Professional Software:</strong> Provides STEM, engineering, architecture, and design students with standalone licenses for the latest releases of AutoCAD, Fusion 360, Revit, and 3ds Max without costly licensing fees.</li>
+            <li><strong>Local Processing & Native File Export:</strong> Features complete functionality without watermarks, enabling native export of .dwg, .step, and 3D printing mesh files for engineering labs and design courses.</li>
+          </ul>
+          <a href="https://www.autodesk.com/education/edu-software/overview" target="_blank" rel="noopener noreferrer" class="direct-url">autodesk.com/education ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 9: Tableau Desktop for Students -->
+      <article class="resource-card" id="card-tableau">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Data Analytics</span>
+            <span class="card-title">
+              <a href="https://www.tableau.com/academic/students" target="_blank" rel="noopener noreferrer" class="card-link">Tableau Desktop for Students ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-tableau')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Full one-year renewable licenses for Tableau Desktop and Prep Builder to model datasets, build dashboards, and run empirical analysis.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free 1-Year Key</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Tableau Creator Commercial Subscription (approx. $840–$1,020/year or $70–$85/month).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Empirical Analysis & Coursework Modeling:</strong> Provides verified students with a full one-year renewable license key for Tableau Desktop and Tableau Prep Builder.</li>
+            <li><strong>Direct Database Connectivity:</strong> Natively imports complex CSV files, Excel spreadsheets, SQL databases, and public statistical datasets, letting you build publication-grade interactive dashboards and regression visual summaries without manual code.</li>
+          </ul>
+          <a href="https://www.tableau.com/academic/students" target="_blank" rel="noopener noreferrer" class="direct-url">tableau.com/academic/students ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 10: Miro for Education -->
+      <article class="resource-card" id="card-miro">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Whiteboard</span>
+            <span class="card-title">
+              <a href="https://miro.com/education/" target="_blank" rel="noopener noreferrer" class="card-link">Miro for Education (Collaborative Whiteboard Suite) ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-miro')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Complimentary two-year education account unlocking unlimited interactive whiteboards, diagramming tools, and mind-mapping kits.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free (2-Year Account)</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / iOS / Android / Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Miro Starter / Business Commercial Subscription ($96–$192/year) and Mural Workspace Subscription ($120/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Unlimited Interactive Workspaces:</strong> Removes the three-board restriction of the free version, providing a complimentary two-year education account that accommodates up to ten team members collaborating concurrently.</li>
+            <li><strong>Structured Review & Literature Frameworks:</strong> Includes built-in diagramming kits, cause-and-effect flowcharts, and mind-mapping canvases to synthesize complex course modules, outline term papers, and structure study group schedules.</li>
+          </ul>
+          <a href="https://miro.com/education/" target="_blank" rel="noopener noreferrer" class="direct-url">miro.com/education ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 11: Overleaf Professional -->
+      <article class="resource-card" id="card-overleaf">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">LaTeX Publishing</span>
+            <span class="card-title">
+              <a href="https://www.overleaf.com/edu" target="_blank" rel="noopener noreferrer" class="card-link">Overleaf Professional (LaTeX Collaboration) ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-overleaf')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Collaborative cloud LaTeX platform removing single-collaborator limits and providing full real-time revision history tracking.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Web Browser (Cross-Platform)</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Overleaf Professional Commercial Tier (approx. $199–$399/year or $15–$30/month).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Unrestricted Multi-Author Collaboration:</strong> Eliminates the single-collaborator limitation of the free tier, allowing entire student project teams, co-authors, and faculty advisors to edit, review, and comment on the same .tex document simultaneously.</li>
+            <li><strong>Enhanced Cloud Compiling & Full History:</strong> Allocates high-priority compilation timeout limits for complex, graphic-heavy theses and offers granular, real-time revision tracking to recover previous drafts instantly.</li>
+            <li><strong>Pre-Loaded Journal & Conference Templates:</strong> Delivers thousands of official, pre-formatted publishing templates for IEEE, ACM, APA, and other academic standards, removing manual page layout and margin formatting friction.</li>
+          </ul>
+          <a href="https://www.overleaf.com/edu" target="_blank" rel="noopener noreferrer" class="direct-url">overleaf.com/edu ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 12: JetBrains All Products Pack -->
+      <article class="resource-card" id="card-jetbrains">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">IDE Ecosystem</span>
+            <span class="card-title">
+              <a href="https://www.jetbrains.com/community/education/#students" target="_blank" rel="noopener noreferrer" class="card-link">JetBrains All Products Pack ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-jetbrains')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Free standalone educational licenses for more than a dozen professional desktop development environments, renewed annually.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free for Students</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: JetBrains All Products Pack Commercial Subscription (approx. $289+/first year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Complete Suite of Industry IDEs:</strong> Grants full, standalone access to professional desktop development environments, including IntelliJ IDEA Ultimate, PyCharm Professional, CLion, WebStorm, and DataSpell.</li>
+            <li><strong>Independent Local Computation & Annual Renewal:</strong> Operates directly on local hardware with advanced code refactoring, memory profiling, and database connectivity, renewable annually as long as active student status continues.</li>
+          </ul>
+          <a href="https://www.jetbrains.com/community/education/#students" target="_blank" rel="noopener noreferrer" class="direct-url">jetbrains.com/community/education ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 13: Wolfram Alpha Pro & Mathematica -->
+      <article class="resource-card" id="card-wolfram">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Computation</span>
+            <span class="card-title">
+              <a href="https://www.wolfram.com/solutions/higher-education/students/" target="_blank" rel="noopener noreferrer" class="card-link">Wolfram | Alpha Pro & Mathematica for Students ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-wolfram')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Full step-by-step mathematical derivations for calculus and linear algebra, paired with symbolic computation and dataset modeling.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Wolfram | Alpha Pro Commercial Subscription ($60–$120/year) and Wolfram Mathematica Student License ($300+).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Step-by-Step Computational Solutions:</strong> Removes paywalled calculation barriers by displaying complete step-by-step mathematical derivations for calculus, linear algebra, differential equations, and statistical models.</li>
+            <li><strong>Data Modeling & Native File Ingestion:</strong> Enables direct uploading of local CSV, Excel, and numerical datasets for parameter fitting, symbolic matrix computation, and publication-ready technical plotting.</li>
+          </ul>
+          <a href="https://www.wolfram.com/solutions/higher-education/students/" target="_blank" rel="noopener noreferrer" class="direct-url">wolfram.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 14: Termius for Students -->
+      <article class="resource-card" id="card-termius">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-official">Terminal & SSH</span>
+            <span class="card-title">
+              <a href="https://termius.com/education" target="_blank" rel="noopener noreferrer" class="card-link">Termius for Students (SSH Suite) ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-termius')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Modern cross-platform terminal and SSH client featuring zero-knowledge credential synchronization, graphical SFTP, and autocomplete snippets.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Cost:</span><strong class="meta-tag">Free via Student Pack</strong></span>
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / iOS / Android</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Termius Pro Commercial Subscription (approx. $120/year or $10/month).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>End-to-End Encrypted Credential Sync:</strong> Seamlessly syncs server connection profiles, SSH keys, and terminal snippets across personal laptops, tablets, and phones under zero-knowledge encryption.</li>
+            <li><strong>Remote Server & HPC Management:</strong> Features integrated graphical SFTP file transfers, background session persistence, and autocomplete snippet blocks for connecting to university computer labs, cloud nodes, or personal headless servers.</li>
+          </ul>
+          <a href="https://termius.com/education" target="_blank" rel="noopener noreferrer" class="direct-url">termius.com/education ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 2.0: ESSENTIAL UTILITIES -->
+    <div class="section-header" id="sec-essential-utilities">
+      <span class="section-index">§ 2.0</span>
+      <span>Essential Utilities & Daily Productivity Tasks</span>
+    </div>
+
+    <div class="resource-list">
+
+      <!-- Item 15: PDF24 Creator -->
+      <article class="resource-card" id="card-pdf24">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">PDF Utility</span>
+            <span class="card-title">
+              <a href="https://www.pdf24.org" target="_blank" rel="noopener noreferrer" class="card-link">PDF24 Creator ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-pdf24')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Completely free offline PDF suite for merging packets, extracting pages, compressing files for Canvas, and running local OCR text extraction.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows Desktop / Cross-Platform Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Smallpdf Pro ($108/year), Adobe Acrobat Standard ($155/year), and freemium sites with strict daily upload caps.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Core Academic Document Assembly:</strong> Completely free with zero watermarks or file-size ceilings; effortlessly merges lecture slide packets, extracts specific pages, reorganizes multi-page reports, and compresses heavy PDF files to pass Canvas upload limits.</li>
+            <li><strong>Local On-Device Execution:</strong> The Windows desktop version processes all page reordering, splitting, and OCR text extraction entirely on local hardware, keeping student transcripts and sensitive tax forms off external servers.</li>
+          </ul>
+          <a href="https://www.pdf24.org" target="_blank" rel="noopener noreferrer" class="direct-url">pdf24.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 16: PDFgear -->
+      <article class="resource-card" id="card-pdfgear">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">PDF Editor</span>
+            <span class="card-title">
+              <a href="https://www.pdfgear.com" target="_blank" rel="noopener noreferrer" class="card-link">PDFgear ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-pdfgear')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Modern zero-cost PDF editor and form filler for marking coursework, highlighting syllabi, and signing petitions without account requirements.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / iOS / iPadOS</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: PDF Expert Commercial License ($79.99/year) and Foxit PDF Editor ($130+/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Modern, Zero-Cost User Interface:</strong> Delivers a clean, responsive interface without paid paywalls, banner ads, or registered account requirements.</li>
+            <li><strong>Coursework Annotations & Form Signing:</strong> Provides immediate highlighting, inline sticky notes, text-box insertions, and electronic signature tools for signing university petitions, add/drop registration slips, and syllabi packets.</li>
+          </ul>
+          <a href="https://www.pdfgear.com" target="_blank" rel="noopener noreferrer" class="direct-url">pdfgear.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 17: MarkText -->
+      <article class="resource-card" id="card-marktext">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Markdown</span>
+            <span class="card-title">
+              <a href="https://github.com/marktext/marktext" target="_blank" rel="noopener noreferrer" class="card-link">MarkText ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-marktext')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Open-source real-time WYSIWYG Markdown editor rendering headings, math formulas, and tables in place without dual-pane clutter.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Typora Standalone License ($14.99) and Ulysses Subscription ($39.99/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>What-You-See-Is-What-You-Get Simplicity:</strong> Fully open-source text editor that renders headings, bold typography, bullet points, and tables instantly in place as you type, removing the visual clutter of dual-pane markdown previewers.</li>
+            <li><strong>Clean Academic Exporting:</strong> Converts lecture notes and quick reading summaries into cleanly formatted PDFs or standard HTML with a single click, ready for clipboard pasting into Word or discussion forums.</li>
+          </ul>
+          <a href="https://github.com/marktext/marktext" target="_blank" rel="noopener noreferrer" class="direct-url">github.com/marktext/marktext ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 18: Pandoc -->
+      <article class="resource-card" id="card-pandoc">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Document Converter</span>
+            <span class="card-title">
+              <a href="https://pandoc.org" target="_blank" rel="noopener noreferrer" class="card-link">Pandoc ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-pandoc')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          The universal markup converter translating seamlessly between Word (.docx), Markdown (.md), HTML, LaTeX, and plain text.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Commercial format conversion software and paid pay-per-file web conversion tools.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Frictionless Document Interoperability:</strong> Operates as the Swiss Army knife of text conversion, translating seamlessly between Microsoft Word (.docx), Markdown (.md), HTML, LaTeX, and plain text.</li>
+            <li><strong>High-Fidelity Structure Retention:</strong> Converts syllabus files, course handouts, and structured essays from one format to another while preserving heading hierarchies, tables, and inline links without layout distortions.</li>
+          </ul>
+          <a href="https://pandoc.org" target="_blank" rel="noopener noreferrer" class="direct-url">pandoc.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 19: LocalSend -->
+      <article class="resource-card" id="card-localsend">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">P2P File Transfer</span>
+            <span class="card-title">
+              <a href="https://localsend.org" target="_blank" rel="noopener noreferrer" class="card-link">LocalSend ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-localsend')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Open-source, local-network file-sharing tool allowing cross-platform transfers between Apple, Android, and Windows systems without cloud servers.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / iOS / Android</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Cross-platform AirDrop barriers and commercial transfer services that compress image and video quality.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Zero-Configuration Local Transfers:</strong> Automatically discovers nearby devices connected to the same Wi-Fi network or mobile hotspot for instant peer-to-peer sharing of lecture videos, document archives, and high-resolution images.</li>
+            <li><strong>Fully Offline & Bandwidth-Free:</strong> Operates over a local, end-to-end encrypted protocol without routing files through external servers, allowing full-speed transfers without internet connectivity or data caps.</li>
+          </ul>
+          <a href="https://localsend.org" target="_blank" rel="noopener noreferrer" class="direct-url">localsend.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 20: ShareX & Shottr -->
+      <article class="resource-card" id="card-sharex-shottr">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Screen Capture</span>
+            <span class="card-title">
+              <a href="https://getsharex.com" target="_blank" rel="noopener noreferrer" class="card-link">ShareX & Shottr ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-sharex-shottr')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          High-precision screen capture, full-page scrolling captures, offline OCR extraction, and instant pixelation redaction.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows (ShareX) / macOS (Shottr)</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Snagit Commercial License ($62.99 one-time) and CleanShot X Subscription ($29+/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Scrolling & Full-Length Capture:</strong> Smoothly captures lengthy lecture slides, source code listings, and multi-page web publications into a single, high-resolution continuous image.</li>
+            <li><strong>Built-In OCR & Redaction Tools:</strong> Extracts text and mathematical notation from images with a single hotkey, alongside pixelation tools to quickly blur out passwords, student IDs, and private data when submitting course questions.</li>
+          </ul>
+          <a href="https://getsharex.com" target="_blank" rel="noopener noreferrer" class="direct-url">getsharex.com ↗</a> | <a href="https://shottr.cc" target="_blank" rel="noopener noreferrer" class="direct-url">shottr.cc ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 21: DeepL Desktop -->
+      <article class="resource-card" id="card-deepl">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Translation</span>
+            <span class="card-title">
+              <a href="https://www.deepl.com" target="_blank" rel="noopener noreferrer" class="card-link">DeepL Desktop ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-deepl')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Context-aware AI translation invoked via double-tap shortcut keys, retaining document layouts for Word and PDF files.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / iOS / Android / Extensions</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Paid research paper translation plugins and rigid machine translation services.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Global Hotkey Translation:</strong> Highlight complex sentences in journal articles or reading packets and press a global shortcut twice (such as Ctrl+C+C or ⌘+C+C) to display contextually accurate translations in a floating pop-up without switching applications.</li>
+            <li><strong>Document Translation with Preserved Layouts:</strong> Uploads full Word or PDF documents directly to receive translated copies that retain original tables, graphs, and formatting.</li>
+          </ul>
+          <a href="https://www.deepl.com" target="_blank" rel="noopener noreferrer" class="direct-url">deepl.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 22: ActivityWatch -->
+      <article class="resource-card" id="card-activitywatch">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Study Tracker</span>
+            <span class="card-title">
+              <a href="https://activitywatch.net" target="_blank" rel="noopener noreferrer" class="card-link">ActivityWatch ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-activitywatch')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Open-source, privacy-first automated activity logger storing study time analytics locally on device hardware.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / Android</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: RescueTime Premium ($78–$144/year) and Toggl Track Paid Plans.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Automated Activity Logging:</strong> Runs quietly in the background to log actual time spent across code editors, word processors, reference readers, and web research tabs without manual start/stop timers.</li>
+            <li><strong>100% Local Data Ownership:</strong> Fully open-source tracking engine that stores all productivity analytics exclusively within a local on-device database, ensuring personal study patterns remain private.</li>
+          </ul>
+          <a href="https://activitywatch.net" target="_blank" rel="noopener noreferrer" class="direct-url">activitywatch.net ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 23: Global Speed -->
+      <article class="resource-card" id="card-globalspeed">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Media Control</span>
+            <span class="card-title">
+              <a href="https://github.com/polywock/globalSpeed" target="_blank" rel="noopener noreferrer" class="card-link">Global Speed ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-globalspeed')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Granular playback speed controller (0.25x to 16x) across web video players with automatic silence skipping and audio volume boosting.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Chrome / Edge / Firefox Extensions</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Built-in web players with restricted speed caps or premium paywalls for playback acceleration.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Granular Playback Speed Adjustments:</strong> Enables customizable speeds ranging from 0.25x to 16x in 0.1x increments across Canvas lecture recordings, YouTube, and embedded web video players.</li>
+            <li><strong>Silence Skipping & Audio Boosting:</strong> Automatically fast-forwards through dead pauses in recorded classes and amplifies quiet microphone recordings up to 400% for clearer listening.</li>
+          </ul>
+          <a href="https://github.com/polywock/globalSpeed" target="_blank" rel="noopener noreferrer" class="direct-url">github.com/polywock/globalSpeed ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 24: Espanso -->
+      <article class="resource-card" id="card-espanso">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Text Expander</span>
+            <span class="card-title">
+              <a href="https://espanso.org" target="_blank" rel="noopener noreferrer" class="card-link">Espanso ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-espanso')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Open-source, cross-platform smart text expander that dynamically replaces custom abbreviations with complex snippets or mathematical symbols.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: TextExpander Commercial Subscription ($40–$100/year) and Alfred Paid Powerpack Features ($40+).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Instant Snippet Expansion:</strong> Open-source and subscription-free; triggers dynamic replacement in any text box when typing predefined abbreviations (e.g., transforming :email into a full institutional address, or expanding standardized email responses and Zoom links).</li>
+            <li><strong>Technical & Mathematical Shorthand:</strong> Enables custom triggers for complex symbols and Greek letters, simplifying raw text note-taking, email drafting, and forum discussions without searching symbol charts.</li>
+          </ul>
+          <a href="https://espanso.org" target="_blank" rel="noopener noreferrer" class="direct-url">espanso.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 25: BleachBit -->
+      <article class="resource-card" id="card-bleachbit">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">System Cleaner</span>
+            <span class="card-title">
+              <a href="https://www.bleachbit.org" target="_blank" rel="noopener noreferrer" class="card-link">BleachBit ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-bleachbit')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Open-source drive cleaner and file shredder to recover disk space from temporary build logs and securely overwrite sensitive records.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: CCleaner Professional ($29.95/year) and commercial utility suites bundled with background tracking.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Disk Space Recovery:</strong> Completely open-source, ad-free, and zero background bloat; performs deep system scans to wipe browser caches, log histories, temporary build files, and junk data to reclaim dozens of gigabytes of disk space.</li>
+            <li><strong>Permanent Data Shredding:</strong> Features military-grade file shredding to overwrite sensitive banking records, transcripts, and tax forms, preventing residual data from being recovered by forensic tools.</li>
+          </ul>
+          <a href="https://www.bleachbit.org" target="_blank" rel="noopener noreferrer" class="direct-url">bleachbit.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 26: Kopia -->
+      <article class="resource-card" id="card-kopia">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Backup Engine</span>
+            <span class="card-title">
+              <a href="https://kopia.io" target="_blank" rel="noopener noreferrer" class="card-link">Kopia ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-kopia')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Client-side encrypted, incremental backup suite with deduplication to protect project repositories and manuscripts across storage endpoints.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux (GUI & CLI)</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Backblaze Personal Backup ($99/year) and Acronis Cyber Protect ($50–$100/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Client-Side Encryption & Content Deduplication:</strong> Free and open-source backup engine using end-to-end encryption; built-in deduplication ensures repeated backups consume minimal drive space.</li>
+            <li><strong>Flexible Storage Backend Support:</strong> Automatically mirrors critical capstone codebases, manuscript drafts, and identity documents to external flash drives, NAS devices, or institutional Google Drive / OneDrive cloud allocations.</li>
+          </ul>
+          <a href="https://kopia.io" target="_blank" rel="noopener noreferrer" class="direct-url">kopia.io ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 27: Draw.io -->
+      <article class="resource-card" id="card-drawio">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Diagramming</span>
+            <span class="card-title">
+              <a href="https://app.diagrams.net" target="_blank" rel="noopener noreferrer" class="card-link">Draw.io / Diagrams.net ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-drawio')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Offline diagramming and schematic design software with extensive libraries for UML schemas, flowcharts, ERD schemas, and circuit models.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux Desktop / Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Microsoft Visio ($60–$180/year) and Lucidchart Individual ($95+/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Comprehensive Technical Stencils:</strong> Open-source and completely free; features extensive shape libraries for process flowcharts, organizational hierarchies, UML schemas, Entity-Relationship diagrams (ERD), and network topologies.</li>
+            <li><strong>Local Storage & Open Formats:</strong> Works entirely offline with zero cloud lock-in; exports directly into editable XML or embeds diagram assets inside vector SVGs and PNGs for academic poster presentations and report slides.</li>
+          </ul>
+          <a href="https://app.diagrams.net" target="_blank" rel="noopener noreferrer" class="direct-url">draw.io ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 28: Calibre -->
+      <article class="resource-card" id="card-calibre">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">E-Book Suite</span>
+            <span class="card-title">
+              <a href="https://calibre-ebook.com" target="_blank" rel="noopener noreferrer" class="card-link">Calibre ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-calibre')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Universal e-book manager and conversion engine adjusting formats across EPUB, PDF, and MOBI to eliminate margin errors on e-readers.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Proprietary conversion tools and commercial pay-per-book conversion services.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Universal Format Interoperability:</strong> Converts course textbooks, anthologies, and reading packets seamlessly across EPUB, PDF, MOBI, and AZW3 formats to fix layout shifts across e-readers and tablets.</li>
+            <li><strong>Automated Metadata Organization:</strong> Ingests unorganized textbook collections, fetches cover art, publication years, and author rosters via ISBN lookups, keeping extensive academic libraries systematically indexed.</li>
+          </ul>
+          <a href="https://calibre-ebook.com" target="_blank" rel="noopener noreferrer" class="direct-url">calibre-ebook.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 29: ONLYOFFICE Desktop Editors -->
+      <article class="resource-card" id="card-onlyoffice">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Office Suite</span>
+            <span class="card-title">
+              <a href="https://www.onlyoffice.com" target="_blank" rel="noopener noreferrer" class="card-link">ONLYOFFICE Desktop Editors ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-onlyoffice')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Native OpenXML standard office suite for opening complex .docx, .xlsx, and .pptx course materials offline with formatting fidelity.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Microsoft 365 Subscriptions ($70–$100/year) and WPS Office Commercial Tiers ($30–$50/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Native OpenXML Standard Engine:</strong> Built around native .docx, .xlsx, and .pptx architectures to open multi-column syllabi, macro-enabled spreadsheets, and lecture slide decks without margin shifts or formatting corruption.</li>
+            <li><strong>Tabbed Multi-Document Workspace:</strong> Consolidates documents, spreadsheets, and presentation slides into a single, clean window via browser-style tabs, completely offline and free of tracking.</li>
+          </ul>
+          <a href="https://www.onlyoffice.com" target="_blank" rel="noopener noreferrer" class="direct-url">onlyoffice.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 30: Motrix -->
+      <article class="resource-card" id="card-motrix">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Download Manager</span>
+            <span class="card-title">
+              <a href="https://motrix.app" target="_blank" rel="noopener noreferrer" class="card-link">Motrix ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-motrix')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Open-source multi-thread download manager accelerating HTTP, FTP, and torrent transfers with up to 64 concurrent threads.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Internet Download Manager (IDM) Commercial License ($24.95 one-time) and ad-supported downloaders.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Multi-Protocol Acceleration:</strong> Fully open-source and free of ad banners; handles HTTP, FTP, BitTorrent, and Magnet URIs with up to 64 concurrent threads to speed up large course recording archives and dataset downloads.</li>
+            <li><strong>Automatic Browser Interception:</strong> Integrates with major web browsers to intercept media streams and file downloads with full support for paused session resumption.</li>
+          </ul>
+          <a href="https://motrix.app" target="_blank" rel="noopener noreferrer" class="direct-url">motrix.app ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 31: WinMerge & Meld -->
+      <article class="resource-card" id="card-diff-tools">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Diff Comparison</span>
+            <span class="card-title">
+              <a href="https://winmerge.org" target="_blank" rel="noopener noreferrer" class="card-link">WinMerge & Meld ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-diff-tools')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Visual document and code comparison tools highlighting character-level revisions and comparing entire directories side by side.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows (WinMerge) / macOS & Linux (Meld)</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Beyond Compare Commercial License ($35–$70) and Kaleidoscope ($96/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Granular In-Line Difference Tracking:</strong> Compares two text files side by side with character-level color highlighting, making it straightforward to review essay revision histories or find breaking changes in lab code.</li>
+            <li><strong>Folder-Level Directory Comparison:</strong> Scans two project folders simultaneously to identify missing attachments, outdated drafts, or duplicated course materials with one-click merging.</li>
+          </ul>
+          <a href="https://winmerge.org" target="_blank" rel="noopener noreferrer" class="direct-url">winmerge.org ↗</a> | <a href="https://meldmerge.org" target="_blank" rel="noopener noreferrer" class="direct-url">meldmerge.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 32: RustDesk -->
+      <article class="resource-card" id="card-rustdesk">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-utility">Remote Desktop</span>
+            <span class="card-title">
+              <a href="https://rustdesk.com" target="_blank" rel="noopener noreferrer" class="card-link">RustDesk ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-rustdesk')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Open-source remote desktop client operating without commercial use session timeouts, supported by TLS encryption.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / iOS / Android / Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: TeamViewer Commercial Subscription ($200–$600+/year) and AnyDesk Paid Tiers ($180+/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>No "Commercial Use Suspected" Timeouts:</strong> Free from artificial session cutoffs, allowing students to access desktop setups from a portable laptop anywhere on campus without subscription blocks.</li>
+            <li><strong>End-to-End Encrypted Tunneling:</strong> Operates out of the box using public relay servers with TLS encryption for remote desktop control and clipboard/file synchronization.</li>
+          </ul>
+          <a href="https://rustdesk.com" target="_blank" rel="noopener noreferrer" class="direct-url">rustdesk.com ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 3.0: ACADEMIC RESEARCH & PAPERS -->
+    <div class="section-header" id="sec-academic-research">
+      <span class="section-index">§ 3.0</span>
+      <span>Academic Research & Document Production</span>
+    </div>
+
+    <div class="resource-list">
+
+      <!-- Item 33: Zotero -->
+      <article class="resource-card" id="card-zotero-full">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">Citation Engine</span>
+            <span class="card-title">
+              <a href="https://www.zotero.org" target="_blank" rel="noopener noreferrer" class="card-link">Zotero ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-zotero-full')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          The open-source reference manager collecting, organizing, annotating, and citing academic literature across thousands of styles.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / iOS / Major Browsers</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: EndNote Commercial License ($250+) and Mendeley Paid Cloud Storage ($55–$165/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>One-Click Metadata Ingestion:</strong> Using the Zotero Connector browser extension, automatically capture paper titles, author rosters, DOIs, and full-text PDFs directly from Google Scholar, JSTOR, PubMed, or campus library discovery catalogs without manual copying.</li>
+            <li><strong>Live Word Processor Integration:</strong> Works seamlessly inside Microsoft Word, LibreOffice Writer, and Google Docs, allowing you to insert citations with hotkeys and generate real-time, auto-updating bibliographies formatted in APA, MLA, Chicago, IEEE, and thousands of other standards.</li>
+            <li><strong>Custom Cloud Storage Sync:</strong> While completely free and open-source, the application allows users to link their own WebDAV or cloud storage for unlimited, cost-free cross-device PDF synchronization.</li>
+          </ul>
+          <a href="https://www.zotero.org" target="_blank" rel="noopener noreferrer" class="direct-url">zotero.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 34: LibreOffice -->
+      <article class="resource-card" id="card-libreoffice">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">Open Office</span>
+            <span class="card-title">
+              <a href="https://www.libreoffice.org" target="_blank" rel="noopener noreferrer" class="card-link">LibreOffice ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-libreoffice')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Fully offline, open-source office suite running completely locally without cloud telemetry or subscription lock-in.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Microsoft 365 Personal / Family Subscriptions ($70–$100/year) and ad-supported office suites.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Zero Cloud Dependence or Subscription Lock-In:</strong> Complete standalone office productivity suite including Writer (documents), Calc (spreadsheets), Impress (presentations), and Math (formula editor)—completely ad-free and executed entirely on local hardware.</li>
+            <li><strong>Native Two-Way Document Compatibility:</strong> Directly opens and exports .docx, .xlsx, .pptx, and Open Document Formats (ODF), alongside native output for internationally standardized archival PDFs (PDF/A).</li>
+            <li><strong>Strict Local Data Privacy:</strong> Processes all files locally without routing draft text through external servers, making it suitable for private research datasets, policy drafts, and coursework.</li>
+          </ul>
+          <a href="https://www.libreoffice.org" target="_blank" rel="noopener noreferrer" class="direct-url">libreoffice.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 35: Sioyek -->
+      <article class="resource-card" id="card-sioyek">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">Research PDF Reader</span>
+            <span class="card-title">
+              <a href="https://sioyek.info" target="_blank" rel="noopener noreferrer" class="card-link">Sioyek ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-sioyek')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Academic PDF viewer designed for technical reading with two-way citation jumps, floating equation previews, and dark mode.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Adobe Acrobat Pro ($240/year) and PDF Expert Commercial License ($79.99/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Frictionless Citation Jump & Return:</strong> Built specifically for complex multi-column papers and textbooks; click any inline citation or figure reference to jump to the bibliography, then press a single shortcut key to instantly snap back to your exact reading location.</li>
+            <li><strong>Floating Figure & Equation Previews:</strong> Hover or trigger instant pop-up previews of referenced figures, diagrams, and formulas without scrolling away from your current paragraph.</li>
+            <li><strong>Ultra-Lightweight Resource Footprint:</strong> Launches instantaneously and renders multi-thousand-page scanned textbooks smoothly with native dark mode support, avoiding system slowdowns.</li>
+          </ul>
+          <a href="https://sioyek.info" target="_blank" rel="noopener noreferrer" class="direct-url">sioyek.info ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 36: TeXstudio -->
+      <article class="resource-card" id="card-texstudio">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">LaTeX IDE</span>
+            <span class="card-title">
+              <a href="https://www.texstudio.org" target="_blank" rel="noopener noreferrer" class="card-link">TeXstudio ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-texstudio')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Integrated desktop LaTeX authoring environment offering live formula previews, code-to-PDF synchronization, and document indexes.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Commercial cloud LaTeX subscriptions ($199–$399/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Fully Offline Professional Typesetting:</strong> Pairs with local TeX distributions (like TeX Live or MacTeX) to compile publication-ready equations, journal articles, and theses anywhere without internet access.</li>
+            <li><strong>Bidirectional Code-to-PDF Synchronization:</strong> Features live syntax highlighting, inline formula previews, and two-way sync clicking between the raw LaTeX source code and the rendered PDF document for rapid debugging.</li>
+            <li><strong>Interactive Document Structure Tree:</strong> Automatically organizes section headings, figure labels, and bibliographic keys into an intuitive sidebar index to manage long research papers and capstone projects.</li>
+          </ul>
+          <a href="https://www.texstudio.org" target="_blank" rel="noopener noreferrer" class="direct-url">texstudio.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 37: JabRef -->
+      <article class="resource-card" id="card-jabref">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">BibTeX Manager</span>
+            <span class="card-title">
+              <a href="https://www.jabref.org" target="_blank" rel="noopener noreferrer" class="card-link">JabRef ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-jabref')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Open-source bibliography manager maintaining plain text .bib files with automated DOI PDF renaming and LaTeX editor integration.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: EndNote Reference Library Features and ReadCube Papers ($36–$60/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Native Standard BibTeX Format:</strong> Avoids proprietary, vendor-locked database formats by keeping your references stored in human-readable .bib text files that integrate directly with your writing pipeline.</li>
+            <li><strong>Automated PDF File Renaming:</strong> Ingests unorganized research papers, fetches metadata via DOIs, and automatically standardizes filenames according to custom patterns (e.g., [Year]_[Author]_[Title].pdf).</li>
+            <li><strong>Direct Integration with Native Editors:</strong> Bridges smoothly with TeXstudio, VS Code, and desktop markdown editors, keeping citations accurate throughout the writing process.</li>
+          </ul>
+          <a href="https://www.jabref.org" target="_blank" rel="noopener noreferrer" class="direct-url">jabref.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 38: VS Code + LaTeX Workshop -->
+      <article class="resource-card" id="card-vscode-latex">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">Modular Typesetting</span>
+            <span class="card-title">
+              <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer" class="card-link">VS Code + LaTeX Workshop ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-vscode-latex')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Local, modular academic typesetting engine combining Visual Studio Code with the LaTeX Workshop extension and Git version control.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Overleaf Commercial Subscriptions ($199–$399/year) and legacy desktop TeX editors.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Full-Featured Offline Academic Engine:</strong> Combines the open-source Visual Studio Code platform with the community-driven LaTeX Workshop extension, enabling continuous local compilation of multi-chapter theses and empirical manuscripts without cloud timeout limits.</li>
+            <li><strong>Extensible Writing Ecosystem:</strong> Provides instantaneous autocomplete snippets, Git-based version branching, and bidirectional SyncTeX clicking between raw code and rendered PDF previews, natively pairing with local developer tools.</li>
+          </ul>
+          <a href="https://code.visualstudio.com" target="_blank" rel="noopener noreferrer" class="direct-url">code.visualstudio.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 39: OpenRefine -->
+      <article class="resource-card" id="card-openrefine">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">Data Cleaning</span>
+            <span class="card-title">
+              <a href="https://openrefine.org" target="_blank" rel="noopener noreferrer" class="card-link">OpenRefine ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-openrefine')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Empirical data cleaning engine that standardizes messy survey datasets, clusters misspelled entries, and logs transformation scripts.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Alteryx Analytics Commercial Licensing and proprietary batch data-cleaning software.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Large-Scale Academic Dataset Normalization:</strong> The premier open-source tool for handling unstructured social science, economic, and quantitative survey data; instantly identifies duplicates, clusters misspelled text entries, and transforms complex date structures across hundreds of thousands of rows.</li>
+            <li><strong>Strict Data Confidentiality & Reproducibility:</strong> Executes entirely within a local browser-based environment to safeguard private research datasets, while automatically recording all cleaning pipelines into reproducible transformation scripts.</li>
+          </ul>
+          <a href="https://openrefine.org" target="_blank" rel="noopener noreferrer" class="direct-url">openrefine.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 40: Typst -->
+      <article class="resource-card" id="card-typst-full">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">Instant Typesetting</span>
+            <span class="card-title">
+              <a href="https://typst.app" target="_blank" rel="noopener noreferrer" class="card-link">Typst ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-typst-full')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Next-generation academic document engine providing millisecond incremental live compiling and readable layout syntax out of the box.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux (CLI & Desktop) / Web</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Overleaf Subscription Tiers and legacy TeX distribution engines with steep configuration curves.
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Millisecond-Level Live Recompilation:</strong> Replaces legacy multi-pass compiling bottlenecks with an incremental layout engine that refreshes formatted multi-page research documents and complex math formulas instantly as you type.</li>
+            <li><strong>Clean, Legible Styling Syntax:</strong> Features an intuitive modern syntax that eliminates fragile macro package conflicts, offering native support for two-column academic layouts, bibliographies, and vector assets right out of the box.</li>
+          </ul>
+          <a href="https://typst.app" target="_blank" rel="noopener noreferrer" class="direct-url">typst.app ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 41: ArchiveBox -->
+      <article class="resource-card" id="card-archivebox">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">Evidence Archiving</span>
+            <span class="card-title">
+              <a href="https://archivebox.io" target="_blank" rel="noopener noreferrer" class="card-link">ArchiveBox ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-archivebox')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          Self-hosted web archiver taking offline snapshots of primary online sources in HTML, PDF, screenshot, and WARC formats.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux (Docker & CLI)</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Paid web-clipping and bookmarking services (e.g., Pocket Premium, Instapaper).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Immunization Against Academic Link Rot:</strong> Secures primary internet sources cited in research papers—such as policy updates, economic news reports, and statistical releases—by preserving complete local copies in HTML, PDF, screenshots, and WARC formats.</li>
+            <li><strong>Verifiable Timestamped Records:</strong> Retains immutable capture timestamps and metadata locally on your drive, providing permanent verification for coursework citations and legal/social inquiries.</li>
+          </ul>
+          <a href="https://archivebox.io" target="_blank" rel="noopener noreferrer" class="direct-url">archivebox.io ↗</a>
+        </div>
+      </article>
+
+      <!-- Item 42: Joplin -->
+      <article class="resource-card" id="card-joplin">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-academic">Encrypted Notebook</span>
+            <span class="card-title">
+              <a href="https://joplinapp.org" target="_blank" rel="noopener noreferrer" class="card-link">Joplin ↗</a>
+            </span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-joplin')">
+            <span class="toggle-text">View Full Guide</span> ▾
+          </button>
+        </div>
+        <p class="card-summary">
+          End-to-end encrypted Markdown note-taking workspace supporting LaTeX mathematical formulas, tagging, and WebDAV cloud syncing.
+        </p>
+        <div class="card-meta-line">
+          <span><span class="meta-label">Platforms:</span><span class="meta-tag">Windows / macOS / Linux / iOS / Android</span></span>
+        </div>
+        <div class="accordion-content">
+          <div class="guide-quote">
+            Replaces: Evernote Personal / Professional Plans ($129.99/year) and Ulysses Subscriptions ($30–$40/year).
+          </div>
+          <div class="guide-subtitle">Key Benefits</div>
+          <ul class="guide-list">
+            <li><strong>Mathematical & Literature Zettelkasten:</strong> Fully open-source note-taking environment supporting LaTeX formula rendering, deep document search, and markdown tagging to synthesize literature notes and lecture summaries.</li>
+            <li><strong>Zero-Knowledge Multi-Device Sync:</strong> Features client-side end-to-end encryption (E2EE) while letting users sync notebooks freely across personal computers and mobile devices via standard WebDAV or personal cloud storage without vendor lock-in.</li>
+          </ul>
+          <a href="https://joplinapp.org" target="_blank" rel="noopener noreferrer" class="direct-url">joplinapp.org ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 4.0: DESKTOP & WORKFLOW ENHANCEMENT -->
+    <div class="section-header" id="sec-desktop-workflow">
+      <span class="section-index">§ 4.0</span>
+      <span>Desktop & Workflow Enhancement</span>
+    </div>
+
+    <!-- SUBSECTION: MACOS -->
+    <div class="subsection-header">Part 1: macOS Utilities</div>
+    <div class="resource-list">
+
+      <!-- Rectangle -->
+      <article class="resource-card" id="card-mac-rectangle">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Windowing</span>
+            <span class="card-title"><a href="https://rectangleapp.com" target="_blank" rel="noopener noreferrer" class="card-link">Rectangle ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-rectangle')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Keyboard-driven window snapping and organization built in native Swift with zero background overhead.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Magnet ($9.99) and BetterSnapTool ($4.99).</div>
+          <ul class="guide-list">
+            <li><strong>Keyboard-Driven Window Tiling:</strong> Snaps windows into halves, quarters, or thirds using keyboard shortcuts or edge dragging.</li>
+            <li><strong>Lightweight Swift Architecture:</strong> Fully open-source and native, consuming minimal background memory with zero data-collection telemetry.</li>
+          </ul>
+          <a href="https://rectangleapp.com" target="_blank" rel="noopener noreferrer" class="direct-url">rectangleapp.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Maccy -->
+      <article class="resource-card" id="card-mac-maccy">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Clipboard</span>
+            <span class="card-title"><a href="https://maccy.app" target="_blank" rel="noopener noreferrer" class="card-link">Maccy ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-maccy')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Minimalist menu bar clipboard history manager with keyboard navigation and password manager blacklisting.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Paste Clipboard App ($14.99/year) and CopyClip.</div>
+          <ul class="guide-list">
+            <li><strong>Native Aesthetics & Rapid Keyboard Navigation:</strong> Invoke via ⌘+Shift+C to search clipped text or code blocks, using number keys to paste instantly.</li>
+            <li><strong>Privacy-Conscious Local Storage:</strong> Stores history in a local database with automatic exclusions for password managers like Bitwarden or 1Password.</li>
+          </ul>
+          <a href="https://maccy.app" target="_blank" rel="noopener noreferrer" class="direct-url">maccy.app ↗</a>
+        </div>
+      </article>
+
+      <!-- AppCleaner -->
+      <article class="resource-card" id="card-mac-appcleaner">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Uninstaller</span>
+            <span class="card-title"><a href="https://freemacsoft.net/appcleaner/" target="_blank" rel="noopener noreferrer" class="card-link">AppCleaner ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-appcleaner')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Drag-and-drop deep application uninstaller removing residual caches, preference plists, and application support files.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: CleanMyMac X Commercial Subscription (approx. $39.95/year).</div>
+          <ul class="guide-list">
+            <li><strong>Drag-and-Drop Orphan File Removal:</strong> Drag any application onto its window to locate all associated caches, preference plists, and support folders nested in ~/Library/Application Support.</li>
+            <li><strong>Zero System Bloat:</strong> Operates without continuous background daemon processes, memory monitors, or upselling banners.</li>
+          </ul>
+          <a href="https://freemacsoft.net/appcleaner/" target="_blank" rel="noopener noreferrer" class="direct-url">freemacsoft.net/appcleaner ↗</a>
+        </div>
+      </article>
+
+      <!-- Stats -->
+      <article class="resource-card" id="card-mac-stats">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Telemetry</span>
+            <span class="card-title"><a href="https://github.com/exelban/stats" target="_blank" rel="noopener noreferrer" class="card-link">Stats ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-stats')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Modular Apple Silicon hardware and energy monitor for the menu bar tracking CPU, GPU, RAM, network, and battery.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: iStat Menus Commercial License (approx. $11.99–$14.99 one-time).</div>
+          <ul class="guide-list">
+            <li><strong>Granular System Telemetry:</strong> Sits in the menu bar to visualize real-time CPU utilization, GPU workload, RAM pressure, and battery discharge rates.</li>
+            <li><strong>Modular Apple Silicon Optimization:</strong> Built specifically for modern Apple chips and battery health protocols with customizable display modules.</li>
+          </ul>
+          <a href="https://github.com/exelban/stats" target="_blank" rel="noopener noreferrer" class="direct-url">github.com/exelban/stats ↗</a>
+        </div>
+      </article>
+
+      <!-- AltTab -->
+      <article class="resource-card" id="card-mac-alttab">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Window Switching</span>
+            <span class="card-title"><a href="https://alt-tab-macos.netlify.app" target="_blank" rel="noopener noreferrer" class="card-link">AltTab ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-alttab')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Windows-style discrete window switcher for macOS with live thumbnails, multi-monitor isolation, and keyboard controls.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Contexts ($9.99) and Witch ($14).</div>
+          <ul class="guide-list">
+            <li><strong>True Window-Level App Switching:</strong> Brings discrete per-window switching with live thumbnail previews to macOS.</li>
+            <li><strong>Display Isolation & Clean Controls:</strong> Filter switcher windows by active monitor and close or minimize inactive windows directly using hotkeys.</li>
+          </ul>
+          <a href="https://alt-tab-macos.netlify.app" target="_blank" rel="noopener noreferrer" class="direct-url">alt-tab-macos.netlify.app ↗</a>
+        </div>
+      </article>
+
+      <!-- Karabiner-Elements -->
+      <article class="resource-card" id="card-mac-karabiner">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Key Remapping</span>
+            <span class="card-title"><a href="https://karabiner-elements.pqrs.org" target="_blank" rel="noopener noreferrer" class="card-link">Karabiner-Elements ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-karabiner')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Kernel-level modifier mapper resolving key layout misalignments on external mechanical keyboards and enabling Hyper Keys.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Proprietary keyboard mapping utilities.</div>
+          <ul class="guide-list">
+            <li><strong>Peripheral Hardware Key Correction:</strong> Corrects Ctrl, Win, and Alt key layout mismatches when connecting standard PC mechanical keyboards.</li>
+            <li><strong>Hyper Key Productivity Configurations:</strong> Turn Caps Lock into Esc on a single tap or a universal multi-modifier Hyper Key on a long press.</li>
+          </ul>
+          <a href="https://karabiner-elements.pqrs.org" target="_blank" rel="noopener noreferrer" class="direct-url">karabiner-elements.pqrs.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Lunar -->
+      <article class="resource-card" id="card-mac-lunar">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Display Control</span>
+            <span class="card-title"><a href="https://lunar.fyi" target="_blank" rel="noopener noreferrer" class="card-link">Lunar ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-lunar')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">DDC/CI display brightness controller synchronizing Mac keyboard brightness keys with external desktop monitors.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Manual monitor button adjustments and proprietary display controllers.</div>
+          <ul class="guide-list">
+            <li><strong>Native Keyboard Brightness Synchronization:</strong> Route macOS brightness hotkeys (F1/F2) directly to external monitors via DDC/CI protocols.</li>
+            <li><strong>Ambient Light Sensor Pairing:</strong> Synchronizes external desktop monitors with the MacBook’s built-in ambient light sensor.</li>
+          </ul>
+          <a href="https://lunar.fyi" target="_blank" rel="noopener noreferrer" class="direct-url">lunar.fyi ↗</a>
+        </div>
+      </article>
+
+      <!-- Hidden Bar -->
+      <article class="resource-card" id="card-mac-hiddenbar">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Menu Bar</span>
+            <span class="card-title"><a href="https://github.com/dwarvesf/hidden" target="_blank" rel="noopener noreferrer" class="card-link">Hidden Bar ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-hiddenbar')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Ultra-lightweight menu bar collapser that tucks away inactive icons to prevent overflow behind the MacBook camera notch.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Bartender Commercial License ($16–$32) and Vanilla Pro.</div>
+          <ul class="guide-list">
+            <li><strong>Menu Bar Decluttering & Notch Compatibility:</strong> Tucks away inactive icons behind an expandable toggle arrow to prevent clipping.</li>
+            <li><strong>Instant Hover & Shortcut Expansion:</strong> Expands icons instantly on hover or hotkey, operating with zero discernible memory overhead.</li>
+          </ul>
+          <a href="https://github.com/dwarvesf/hidden" target="_blank" rel="noopener noreferrer" class="direct-url">github.com/dwarvesf/hidden ↗</a>
+        </div>
+      </article>
+
+      <!-- Raycast -->
+      <article class="resource-card" id="card-mac-raycast">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">macOS Launcher</span>
+            <span class="card-title"><a href="https://www.raycast.com" target="_blank" rel="noopener noreferrer" class="card-link">Raycast ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-mac-raycast')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Keyboard-centric command launcher with clipboard history, window snapping, extensions, and shell script execution.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Alfred Powerpack ($40+) and slow default system search utilities.</div>
+          <ul class="guide-list">
+            <li><strong>Full Keyboard Desktop Command Center:</strong> Manage clipboard history, calculate conversions, and trigger shortcuts instantly.</li>
+            <li><strong>Community Extension Store:</strong> Access thousands of plugins for GitHub issues, dictionary lookups, window snapping, and media controls.</li>
+          </ul>
+          <a href="https://www.raycast.com" target="_blank" rel="noopener noreferrer" class="direct-url">raycast.com ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SUBSECTION: WINDOWS -->
+    <div class="subsection-header" style="margin-top: 36px;">Part 2: Windows Utilities</div>
+    <div class="resource-list">
+
+      <!-- PowerToys -->
+      <article class="resource-card" id="card-win-powertoys">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Engine</span>
+            <span class="card-title"><a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener noreferrer" class="card-link">Microsoft PowerToys ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-powertoys')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Microsoft’s official system suite with FancyZones grid window manager, PowerToys Run, and regex batch renaming.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: DisplayFusion ($34) and commercial batch renaming utilities.</div>
+          <ul class="guide-list">
+            <li><strong>FancyZones Advanced Grid Layouts:</strong> Hold Shift while dragging windows to snap them into complex, custom multi-monitor tile layouts.</li>
+            <li><strong>Modular System Enhancements:</strong> Includes PowerToys Run launcher, PowerRename regex tool, and global color pickers.</li>
+          </ul>
+          <a href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener noreferrer" class="direct-url">github.com/microsoft/PowerToys ↗</a>
+        </div>
+      </article>
+
+      <!-- Everything -->
+      <article class="resource-card" id="card-win-everything">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Search</span>
+            <span class="card-title"><a href="https://www.voidtools.com" target="_blank" rel="noopener noreferrer" class="card-link">Everything by voidtools ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-everything')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Instantaneous desktop search engine reading the NTFS Master File Table to surface millions of local files with zero latency.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Windows Indexing and heavy desktop indexers.</div>
+          <ul class="guide-list">
+            <li><strong>Millisecond-Level Disk Indexing:</strong> Surfaces local files and research datasets instantly as you type across storage volumes.</li>
+            <li><strong>Minimal Resource Footprint:</strong> Runs on minimal RAM with full support for wildcard filters, boolean searches, and regular expressions.</li>
+          </ul>
+          <a href="https://www.voidtools.com" target="_blank" rel="noopener noreferrer" class="direct-url">voidtools.com ↗</a>
+        </div>
+      </article>
+
+      <!-- QuickLook -->
+      <article class="resource-card" id="card-win-quicklook">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Preview</span>
+            <span class="card-title"><a href="https://github.com/QL-Win/QuickLook" target="_blank" rel="noopener noreferrer" class="card-link">QuickLook ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-quicklook')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Brings spacebar previewing to Windows Explorer, inspecting PDFs, Markdown notes, code, and images in a floating window.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Seer Commercial File Previewer ($12.18).</div>
+          <ul class="guide-list">
+            <li><strong>Spacebar Previews on Windows:</strong> Highlight any file and press spacebar to inspect contents without opening the underlying program.</li>
+            <li><strong>Broad Native Format Support:</strong> Renders PDFs, Word docs, Markdown, source code, images, and audio/video files instantly.</li>
+          </ul>
+          <a href="https://github.com/QL-Win/QuickLook" target="_blank" rel="noopener noreferrer" class="direct-url">github.com/QL-Win/QuickLook ↗</a>
+        </div>
+      </article>
+
+      <!-- TrafficMonitor -->
+      <article class="resource-card" id="card-win-traffic">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Taskbar</span>
+            <span class="card-title"><a href="https://github.com/zhongyang219/TrafficMonitor" target="_blank" rel="noopener noreferrer" class="card-link">TrafficMonitor ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-traffic')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Lightweight open-source taskbar monitor showing real-time upload/download speeds, CPU load, and RAM usage cleanly.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Commercial ad-supported system optimization tools.</div>
+          <ul class="guide-list">
+            <li><strong>Embedded Taskbar Integration:</strong> Neatly displays network throughput, CPU usage, and RAM pressure in the system tray without blocking workspaces.</li>
+            <li><strong>Ad-Free Performance Tracking:</strong> Open-source hardware sensor metrics without telemetry or promotional alerts.</li>
+          </ul>
+          <a href="https://github.com/zhongyang219/TrafficMonitor" target="_blank" rel="noopener noreferrer" class="direct-url">github.com/zhongyang219/TrafficMonitor ↗</a>
+        </div>
+      </article>
+
+      <!-- Flow Launcher -->
+      <article class="resource-card" id="card-win-flow">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Launcher</span>
+            <span class="card-title"><a href="https://www.flowlauncher.com" target="_blank" rel="noopener noreferrer" class="card-link">Flow Launcher ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-flow')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Extensible open-source quick launcher integrating Everything search, math calculations, and terminal execution.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Listary Pro ($19.95) and unmaintained desktop launchers.</div>
+          <ul class="guide-list">
+            <li><strong>Keystroke Command Palette:</strong> Invoke via Alt+Space to search files via Everything, run terminal commands, or reboot the system.</li>
+            <li><strong>Modular Plugin Integration:</strong> Free plugins for browser bookmarks, calculations, and search inside local Markdown vaults.</li>
+          </ul>
+          <a href="https://www.flowlauncher.com" target="_blank" rel="noopener noreferrer" class="direct-url">flowlauncher.com ↗</a>
+        </div>
+      </article>
+
+      <!-- AutoHotkey -->
+      <article class="resource-card" id="card-win-ahk">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Automation</span>
+            <span class="card-title"><a href="https://www.autohotkey.com" target="_blank" rel="noopener noreferrer" class="card-link">AutoHotkey ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-ahk')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Open-source scripting engine for custom global keyboard shortcuts, automated text expansion, and window triage.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Commercial macro recorders and automation software suites.</div>
+          <ul class="guide-list">
+            <li><strong>Unrestricted Input Automation:</strong> Industry standard for custom key combinations and automated text insertion.</li>
+            <li><strong>Frictionless Window Triage:</strong> Pin windows Always on Top or enable background scrolling with lightweight scripts on 2–3MB RAM.</li>
+          </ul>
+          <a href="https://www.autohotkey.com" target="_blank" rel="noopener noreferrer" class="direct-url">autohotkey.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Snipaste -->
+      <article class="resource-card" id="card-win-snipaste">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Pinning</span>
+            <span class="card-title"><a href="https://www.snipaste.com" target="_blank" rel="noopener noreferrer" class="card-link">Snipaste ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-snipaste')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Screenshot capture with F3 on-screen pinning, transforming clippings into floating reference windows while drafting.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Commercial screenshot annotation tools.</div>
+          <ul class="guide-list">
+            <li><strong>Floating Image Pinning (F3):</strong> Capture UI elements via F1 and pin them onto the screen via F3 as borderless floating references while writing in another window.</li>
+            <li><strong>Zero Installation Overhead:</strong> Standalone executable with a built-in pixel magnifier, color picker, and vector drawing tools.</li>
+          </ul>
+          <a href="https://www.snipaste.com" target="_blank" rel="noopener noreferrer" class="direct-url">snipaste.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Twinkle Tray -->
+      <article class="resource-card" id="card-win-twinkle">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Display</span>
+            <span class="card-title"><a href="https://twinkletray.com" target="_blank" rel="noopener noreferrer" class="card-link">Twinkle Tray ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-twinkle')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">System tray DDC/CI brightness manager controlling external desktop monitors with smooth unified sliders and hotkeys.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Native Windows sliders that cannot adjust external desktop displays.</div>
+          <ul class="guide-list">
+            <li><strong>Centralized Multi-Monitor Sliders:</strong> Controls external desktop monitor hardware backlights from the system tray without touching physical buttons.</li>
+            <li><strong>Time-Based Scheduling:</strong> Adjusts luminance automatically at sunset to reduce eye fatigue during late-night study sessions.</li>
+          </ul>
+          <a href="https://twinkletray.com" target="_blank" rel="noopener noreferrer" class="direct-url">twinkletray.com ↗</a>
+        </div>
+      </article>
+
+      <!-- EarTrumpet -->
+      <article class="resource-card" id="card-win-eartrumpet">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-system">Windows Audio</span>
+            <span class="card-title"><a href="https://eartrumpet.app" target="_blank" rel="noopener noreferrer" class="card-link">EarTrumpet ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-win-eartrumpet')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Independent per-application audio volume mixer and output device router embedded directly in the Windows taskbar tray.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: The cumbersome native Windows Volume Mixer settings page.</div>
+          <ul class="guide-list">
+            <li><strong>Individual App Volume Routing:</strong> Boost quiet lecture recordings independently while turning down background music or chat audio.</li>
+            <li><strong>Instant Audio Output Switching:</strong> Route video streams to headphones while keeping system sounds on speakers with a single click.</li>
+          </ul>
+          <a href="https://eartrumpet.app" target="_blank" rel="noopener noreferrer" class="direct-url">eartrumpet.app ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 5.0: KNOWLEDGE MANAGEMENT & ACTIVE RECALL -->
+    <div class="section-header" id="sec-knowledge-recall">
+      <span class="section-index">§ 5.0</span>
+      <span>Knowledge Management & Active Recall</span>
+    </div>
+
+    <div class="resource-list">
+
+      <!-- Item: Anki -->
+      <article class="resource-card" id="card-km-anki">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Spaced Repetition</span>
+            <span class="card-title"><a href="https://apps.ankiweb.net" target="_blank" rel="noopener noreferrer" class="card-link">Anki ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-anki')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Open-source active recall flashcard engine powered by SM-2 and FSRS algorithms with Image Occlusion and LaTeX support.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Quizlet Plus ($35.99/year) and Brainscape Pro ($59.88/year).</div>
+          <ul class="guide-list">
+            <li><strong>Algorithmic Cognitive Retention:</strong> Uses FSRS and SM-2 algorithms to dynamically schedule review intervals based on recall difficulty.</li>
+            <li><strong>Extensible Media & Image Occlusion:</strong> Render LaTeX equations, audio tracks, and occluded anatomical/economic diagrams.</li>
+            <li><strong>Data Sovereignty & Free Cloud Sync:</strong> Free, permanent synchronization via AnkiWeb with zero card limits or advertisements.</li>
+          </ul>
+          <a href="https://apps.ankiweb.net" target="_blank" rel="noopener noreferrer" class="direct-url">apps.ankiweb.net ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Obsidian -->
+      <article class="resource-card" id="card-km-obsidian">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Linked Vault</span>
+            <span class="card-title"><a href="https://obsidian.md" target="_blank" rel="noopener noreferrer" class="card-link">Obsidian ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-obsidian')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Local-first plaintext Markdown vault with bidirectional [[wikilinks]], interactive graph views, and a large academic plugin ecosystem.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Roam Research ($180/year) and proprietary cloud notes with vendor lock-in.</div>
+          <ul class="guide-list">
+            <li><strong>Local Markdown File Longevity:</strong> Stores your vault as human-readable .md files on your drive, ensuring lifelong access independent of vendors.</li>
+            <li><strong>Bidirectional Linking & Graph View:</strong> Connect concepts across courses with [[wikilinks]], generating dynamic visual knowledge graphs.</li>
+            <li><strong>Academic Plugin Ecosystem:</strong> MathJax support, direct Zotero literature synchronization, and integrated canvas whiteboards.</li>
+          </ul>
+          <a href="https://obsidian.md" target="_blank" rel="noopener noreferrer" class="direct-url">obsidian.md ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Logseq -->
+      <article class="resource-card" id="card-km-logseq">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Outliner</span>
+            <span class="card-title"><a href="https://logseq.com" target="_blank" rel="noopener noreferrer" class="card-link">Logseq ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-logseq')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Privacy-first outliner featuring infinite-depth block referencing, daily scratchpad journaling, and embedded PDF annotation.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Workflowy Pro ($49/year) and Roam Research ($180/year).</div>
+          <ul class="guide-list">
+            <li><strong>Block-Level Referencing:</strong> Structures notes as infinite-depth outliner blocks for dynamic transclusion across lectures.</li>
+            <li><strong>Daily Journaling with PDF Annotation:</strong> Highlight and clip diagrams directly inside PDFs to generate referenced notes with backlink anchors.</li>
+            <li><strong>Zero-Telemetry Local Operation:</strong> Saves directly to local Markdown or Org-mode folders without required accounts.</li>
+          </ul>
+          <a href="https://logseq.com" target="_blank" rel="noopener noreferrer" class="direct-url">logseq.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: RemNote -->
+      <article class="resource-card" id="card-km-remnote">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Flashcard Outliner</span>
+            <span class="card-title"><a href="https://www.remnote.com" target="_blank" rel="noopener noreferrer" class="card-link">RemNote ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-remnote')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Combines lecture outliner notes with instant active-recall flashcard generation using simple typing shortcuts.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Quizlet subscriptions and maintaining separate note and flashcard software.</div>
+          <ul class="guide-list">
+            <li><strong>Inline Flashcard Creation:</strong> Type &gt;&gt; or :: while writing lecture outlines to convert bullet points into active-recall flashcards automatically.</li>
+            <li><strong>Hierarchical Spaced Repetition:</strong> Flashcards inherit their place in your concept tree, preserving broader structural context.</li>
+          </ul>
+          <a href="https://www.remnote.com" target="_blank" rel="noopener noreferrer" class="direct-url">remnote.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Foliate -->
+      <article class="resource-card" id="card-km-foliate">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">E-Book Reader</span>
+            <span class="card-title"><a href="https://johnfactotum.github.io/foliate/" target="_blank" rel="noopener noreferrer" class="card-link">Foliate ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-foliate')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Distraction-free EPUB, MOBI, and AZW3 textbook reader with typography fine-tuning and structured Markdown annotation export.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Ad-supported, heavy desktop e-book reading apps.</div>
+          <ul class="guide-list">
+            <li><strong>Distraction-Free Monograph Reading:</strong> Clean reading environment with multi-column views and floating footnote previews.</li>
+            <li><strong>Structured Markdown Annotation Export:</strong> Consolidates reading highlights and notes for one-click export into Obsidian vaults.</li>
+          </ul>
+          <a href="https://johnfactotum.github.io/foliate/" target="_blank" rel="noopener noreferrer" class="direct-url">johnfactotum.github.io/foliate ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Memos -->
+      <article class="resource-card" id="card-km-memos">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Micro-Notes</span>
+            <span class="card-title"><a href="https://usememos.com" target="_blank" rel="noopener noreferrer" class="card-link">Memos ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-memos')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Privacy-first micro-note stream with SQLite storage for capturing fleeting academic thoughts and quick problem notes.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Flomo Paid Subscriptions ($15–$25/year) and disorganized sticky notes.</div>
+          <ul class="guide-list">
+            <li><strong>Low-Friction Capture:</strong> Private-feed interface to log lecture quotes, quick thoughts, or exam notes in seconds.</li>
+            <li><strong>Full Data Sovereignty:</strong> Saves records directly into a local SQLite database with nested tags and full-text search.</li>
+          </ul>
+          <a href="https://usememos.com" target="_blank" rel="noopener noreferrer" class="direct-url">usememos.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Freeplane -->
+      <article class="resource-card" id="card-km-freeplane">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Mind Mapping</span>
+            <span class="card-title"><a href="https://www.freeplane.org" target="_blank" rel="noopener noreferrer" class="card-link">Freeplane ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-freeplane')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Open-source concept mapping software handling large curriculum taxonomies across thousands of nodes with inline LaTeX.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: XMind ($59.99/year) and MindNode Paid Plans.</div>
+          <ul class="guide-list">
+            <li><strong>Massive Structural Course Hierarchies:</strong> Organizes complex semester taxonomies across thousands of nodes without lag or paywalls.</li>
+            <li><strong>In-Node Rich Text & LaTeX Support:</strong> Accommodates long commentary, links, and formulas with expandable folding controls.</li>
+          </ul>
+          <a href="https://www.freeplane.org" target="_blank" rel="noopener noreferrer" class="direct-url">freeplane.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Excalidraw -->
+      <article class="resource-card" id="card-km-excalidraw">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Feynman Whiteboard</span>
+            <span class="card-title"><a href="https://excalidraw.com" target="_blank" rel="noopener noreferrer" class="card-link">Excalidraw ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-excalidraw')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Hand-drawn virtual whiteboard for Feynman technique concept mapping, end-to-end encrypted sharing, and SVG exports.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Proprietary whiteboard subscriptions with restrictive export formats.</div>
+          <ul class="guide-list">
+            <li><strong>Feynman Technique Whiteboard Retrieval:</strong> Sketch economic curves and algorithm structures from memory without formatting pressure.</li>
+            <li><strong>End-to-End Encryption & Vector Output:</strong> Works straight in the browser without sign-up, supporting transparent SVG exports.</li>
+          </ul>
+          <a href="https://excalidraw.com" target="_blank" rel="noopener noreferrer" class="direct-url">excalidraw.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: SilverBullet -->
+      <article class="resource-card" id="card-km-silverbullet">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Live Query Markdown</span>
+            <span class="card-title"><a href="https://silverbullet.md" target="_blank" rel="noopener noreferrer" class="card-link">SilverBullet ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-silverbullet')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Extensible plaintext knowledge space storing raw .md files with dynamic queries to list tasks and tags across pages.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Bloated proprietary cloud-based notebook systems.</div>
+          <ul class="guide-list">
+            <li><strong>Plain Markdown with Dynamic Queries:</strong> Stores files locally as raw .md while running live queries to aggregate tasks dynamically.</li>
+            <li><strong>Keyboard-Centric Minimalist Design:</strong> Centered command palette for navigation, templating, and page-linking during revision blocks.</li>
+          </ul>
+          <a href="https://silverbullet.md" target="_blank" rel="noopener noreferrer" class="direct-url">silverbullet.md ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Foam -->
+      <article class="resource-card" id="card-km-foam">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">VS Code Zettelkasten</span>
+            <span class="card-title"><a href="https://foambubble.github.io/foam/" target="_blank" rel="noopener noreferrer" class="card-link">Foam ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-foam')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">VS Code-based academic knowledge graph and Zettelkasten environment backed by native Git version control.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Standalone proprietary networked note-taking apps.</div>
+          <ul class="guide-list">
+            <li><strong>Unified Coding & Note-Taking Workspace:</strong> Operates directly inside VS Code to read literature and write code without switching windows.</li>
+            <li><strong>Native Git Version Control:</strong> Leverages Git commits to log every edit, ensuring revision histories remain durable.</li>
+          </ul>
+          <a href="https://foambubble.github.io/foam/" target="_blank" rel="noopener noreferrer" class="direct-url">foambubble.github.io/foam ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Markmind -->
+      <article class="resource-card" id="card-km-markmind">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Cloze Mindmapping</span>
+            <span class="card-title"><a href="https://www.markmind.net/" target="_blank" rel="noopener noreferrer" class="card-link">Markmind ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-markmind')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Bidirectional outliner-to-mindmap pipeline supporting cloze deletion masks across branches to test structural recall.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: MarginNote ($49.99) and MindMaster Commercial Subscription.</div>
+          <ul class="guide-list">
+            <li><strong>Bidirectional Outliner-to-Mindmap Pipeline:</strong> Transforms Markdown outlines into concept trees with embedded formulas and code.</li>
+            <li><strong>In-Node Cloze Deletion Retrieval:</strong> Apply cloze deletion masks across nodes to conceal formulas and test recall along logic chains.</li>
+          </ul>
+          <a href="https://www.markmind.net/" target="_blank" rel="noopener noreferrer" class="direct-url">markmind.net ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Anytype -->
+      <article class="resource-card" id="card-km-anytype">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Local-First P2P</span>
+            <span class="card-title"><a href="https://anytype.io" target="_blank" rel="noopener noreferrer" class="card-link">Anytype ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-anytype')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Object-oriented personal operating environment with relational databases, Kanban boards, and decentralized peer-to-peer sync.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Notion Cloud Workspaces (eliminates cloud telemetry) and Coda.</div>
+          <ul class="guide-list">
+            <li><strong>Object-Oriented Knowledge Architecture:</strong> Relational databases and Kanban views operating completely locally on your hardware.</li>
+            <li><strong>Decentralized P2P Synchronization:</strong> Immediate offline read/write speeds; synchronizes across devices with end-to-end encryption.</li>
+          </ul>
+          <a href="https://anytype.io" target="_blank" rel="noopener noreferrer" class="direct-url">anytype.io ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: AFFiNE -->
+      <article class="resource-card" id="card-km-affine">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Hybrid Canvas</span>
+            <span class="card-title"><a href="https://affine.pro" target="_blank" rel="noopener noreferrer" class="card-link">AFFiNE ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-affine')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Open-source unified workspace allowing single projects to toggle between linear documents and infinite spatial canvases.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Separate whiteboard and linear note platforms, and Craft ($60/year).</div>
+          <ul class="guide-list">
+            <li><strong>Toggle Between Linear Pages & Spatial Canvases:</strong> Shift from a structured document view to an infinite canvas for freehand concept clustering.</li>
+            <li><strong>Privacy-First Local Storage:</strong> Operates locally with standard Markdown and vector asset exports, free of vendor lock-in.</li>
+          </ul>
+          <a href="https://affine.pro" target="_blank" rel="noopener noreferrer" class="direct-url">affine.pro ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Trilium Notes -->
+      <article class="resource-card" id="card-km-trilium">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Hierarchical Tree</span>
+            <span class="card-title"><a href="https://triliumnotes.org" target="_blank" rel="noopener noreferrer" class="card-link">Trilium Notes ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-trilium')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Scalable hierarchical knowledge tree backed by SQLite, note cloning across branches, and per-edit revision snapshots.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Microsoft OneNote (bypasses sync corruptions) and Evernote ($129.99/year).</div>
+          <ul class="guide-list">
+            <li><strong>Scalable Deep Tree Architecture:</strong> Local SQLite database handles tens of thousands of complex technical notes without lag.</li>
+            <li><strong>Engineering-Grade Precision:</strong> Code highlighters, LaTeX rendering, full-text indexing, and automatic per-edit revision snapshots.</li>
+          </ul>
+          <a href="https://triliumnotes.org" target="_blank" rel="noopener noreferrer" class="direct-url">triliumnotes.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Item: Flashcards Deluxe -->
+      <article class="resource-card" id="card-km-flashcardsdeluxe">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-recall">Algorithmic Drill</span>
+            <span class="card-title"><a href="https://orangeorapple.com/Flashcards/" target="_blank" rel="noopener noreferrer" class="card-link">Flashcards Deluxe ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-km-flashcardsdeluxe')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Customizable active-recall flashcard app with spreadsheet ingestion and configurable spaced-repetition intervals.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Quizlet Plus ($35.99/year) and Brainscape Pro.</div>
+          <ul class="guide-list">
+            <li><strong>Fine-Tuned Parameters:</strong> Adjust interval multipliers, target retention rates, and test modes (spelling, multiple-choice, active recall).</li>
+            <li><strong>Spreadsheet Ingestion:</strong> Ingest two-column datasets from Excel or Google Sheets to generate indexed cards with audio in seconds.</li>
+          </ul>
+          <a href="https://orangeorapple.com/Flashcards/" target="_blank" rel="noopener noreferrer" class="direct-url">orangeorapple.com/Flashcards ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 6.0: MEDIA PRODUCTION & CONVERSION -->
+    <div class="section-header" id="sec-media-production">
+      <span class="section-index">§ 6.0</span>
+      <span>Media Production & File Conversion</span>
+    </div>
+
+    <div class="resource-list">
+
+      <!-- HandBrake -->
+      <article class="resource-card" id="card-med-handbrake">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-media">Transcoder</span>
+            <span class="card-title"><a href="https://handbrake.fr" target="_blank" rel="noopener noreferrer" class="card-link">HandBrake ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-med-handbrake')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Hardware-accelerated video transcoder compressing multi-gigabyte recordings down by 70%–90% for Canvas upload limits.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Pay-per-file online compressors and adware-bundled commercial converters.</div>
+          <ul class="guide-list">
+            <li><strong>Storage Optimization:</strong> H.264, H.265, and AV1 encoders compress recordings by 70%–90% without visible quality loss.</li>
+            <li><strong>Batch Queuing:</strong> Process entire folders of semester recordings and presentation rehearsals with web-optimized presets.</li>
+          </ul>
+          <a href="https://handbrake.fr" target="_blank" rel="noopener noreferrer" class="direct-url">handbrake.fr ↗</a>
+        </div>
+      </article>
+
+      <!-- OBS Studio -->
+      <article class="resource-card" id="card-med-obs">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-media">Screen Recording</span>
+            <span class="card-title"><a href="https://obsproject.com" target="_blank" rel="noopener noreferrer" class="card-link">OBS Studio ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-med-obs')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Multi-track screen recording and broadcasting platform with zero watermarks, no duration limits, and modular scene layouts.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Camtasia ($299 one-time) and Loom Paid Subscriptions ($12.50–$15/month).</div>
+          <ul class="guide-list">
+            <li><strong>Unrestricted Local Recording:</strong> Zero watermarks, zero time limits, and zero cloud lock-in; records directly to local storage.</li>
+            <li><strong>Multi-Track Audio Mixing:</strong> Capture microphone audio and system audio to separate tracks for independent balancing in post-production.</li>
+          </ul>
+          <a href="https://obsproject.com" target="_blank" rel="noopener noreferrer" class="direct-url">obsproject.com ↗</a>
+        </div>
+      </article>
+
+      <!-- DaVinci Resolve -->
+      <article class="resource-card" id="card-med-davinci">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-media">Video Editor</span>
+            <span class="card-title"><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener noreferrer" class="card-link">DaVinci Resolve ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-med-davinci')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Free professional non-linear video editor with Color Page grading, Fairlight audio mastering, and Fusion visual effects.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Adobe Premiere Pro ($240–$360/year) and Final Cut Pro ($299.99).</div>
+          <ul class="guide-list">
+            <li><strong>Comprehensive Production Pipeline:</strong> Outputs up to 4K 60fps without watermarks, integrating editing, color grading, and audio mastering.</li>
+            <li><strong>GPU Acceleration:</strong> Optimized for multi-core CPUs and discrete GPUs, ensuring frame-accurate playback without subscription fees.</li>
+          </ul>
+          <a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" rel="noopener noreferrer" class="direct-url">blackmagicdesign.com/davinciresolve ↗</a>
+        </div>
+      </article>
+
+      <!-- Audacity -->
+      <article class="resource-card" id="card-med-audacity">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-media">Audio Workstation</span>
+            <span class="card-title"><a href="https://www.audacityteam.org" target="_blank" rel="noopener noreferrer" class="card-link">Audacity ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-med-audacity')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Open-source audio editor with spectral noise suppression, waveform cutting, and LUFS/RMS loudness normalization.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Adobe Audition ($20.99/month) and freemium audio recorders with limited exports.</div>
+          <ul class="guide-list">
+            <li><strong>Spectral Noise Suppression:</strong> Cleans up lecture recordings and interviews by removing persistent HVAC hums, hiss, and room echo.</li>
+            <li><strong>Waveform Precision & Loudness:</strong> Snip pauses and normalize loudness to podcast standards with exports to WAV, FLAC, or MP3.</li>
+          </ul>
+          <a href="https://www.audacityteam.org" target="_blank" rel="noopener noreferrer" class="direct-url">audacityteam.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Inkscape -->
+      <article class="resource-card" id="card-med-inkscape">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-media">Vector Illustrator</span>
+            <span class="card-title"><a href="https://inkscape.org" target="_blank" rel="noopener noreferrer" class="card-link">Inkscape ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-med-inkscape')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Professional vector graphics editor for academic poster design, mechanism schematics, and vector PDF dissection.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Adobe Illustrator ($240–$360/year) and CorelDRAW.</div>
+          <ul class="guide-list">
+            <li><strong>Scalable Academic Figures:</strong> Native SVG editor for technical mechanisms and conference posters that scale infinitely without pixelation.</li>
+            <li><strong>Vector PDF Dissection:</strong> Opens vector PDFs from R or Python to edit raw path nodes, colors, and label typographies directly.</li>
+          </ul>
+          <a href="https://inkscape.org" target="_blank" rel="noopener noreferrer" class="direct-url">inkscape.org ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 7.0: PRIVACY, SECURITY & DATA OWNERSHIP -->
+    <div class="section-header" id="sec-privacy-security">
+      <span class="section-index">§ 7.0</span>
+      <span>Privacy, Security & Data Ownership</span>
+    </div>
+
+    <div class="resource-list">
+
+      <!-- Bitwarden -->
+      <article class="resource-card" id="card-sec-bitwarden">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-security">Encrypted Vault</span>
+            <span class="card-title"><a href="https://bitwarden.com" target="_blank" rel="noopener noreferrer" class="card-link">Bitwarden ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-sec-bitwarden')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Zero-knowledge client-side encrypted password manager syncing credentials across unlimited devices without subscription fees.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: 1Password Individual ($35.88/year), Dashlane ($59.99/year), and LastPass Free.</div>
+          <ul class="guide-list">
+            <li><strong>Zero-Knowledge Encryption:</strong> Protects credentials with AES-256 and Argon2 key derivation before leaving your hardware.</li>
+            <li><strong>Unlimited Multi-Device Sync:</strong> Free tier includes unlimited password storage across desktop, mobile, and browser clients with 2FA support.</li>
+          </ul>
+          <a href="https://bitwarden.com" target="_blank" rel="noopener noreferrer" class="direct-url">bitwarden.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Cryptomator -->
+      <article class="resource-card" id="card-sec-cryptomator">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-security">Cloud Encryption</span>
+            <span class="card-title"><a href="https://cryptomator.org" target="_blank" rel="noopener noreferrer" class="card-link">Cryptomator ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-sec-cryptomator')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Client-side transparent encryption engine turning institutional Google Drive, OneDrive, or Dropbox into private zero-knowledge vaults.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Boxcryptor and closed-source proprietary cloud wrappers.</div>
+          <ul class="guide-list">
+            <li><strong>Client-Side Shield for Public Drives:</strong> Encrypts files locally before synchronization; cloud providers only see scrambled ciphertext blocks.</li>
+            <li><strong>Virtual Local Drive Mounting:</strong> Mounts unlocked vaults as standard virtual drives for drag-and-drop file modifications.</li>
+          </ul>
+          <a href="https://cryptomator.org" target="_blank" rel="noopener noreferrer" class="direct-url">cryptomator.org ↗</a>
+        </div>
+      </article>
+
+      <!-- KeePassXC -->
+      <article class="resource-card" id="card-sec-keepassxc">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-security">Offline Vault</span>
+            <span class="card-title"><a href="https://keepassxc.org" target="_blank" rel="noopener noreferrer" class="card-link">KeePassXC ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-sec-keepassxc')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">100% offline password database with zero network telemetry, saving records inside a single local .kdbx file with YubiKey support.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Cloud-dependent proprietary password managers vulnerable to vendor downtime.</div>
+          <ul class="guide-list">
+            <li><strong>100% Offline Vault Sovereignty:</strong> Zero telemetry or network calls; saves records inside a single local .kdbx file on your hardware.</li>
+            <li><strong>Hardware Token Support:</strong> Integrates with physical YubiKey challenge-response authenticators and memory protections against scrapers.</li>
+          </ul>
+          <a href="https://keepassxc.org" target="_blank" rel="noopener noreferrer" class="direct-url">keepassxc.org ↗</a>
+        </div>
+      </article>
+
+      <!-- Proton VPN -->
+      <article class="resource-card" id="card-sec-protonvpn">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-security">Audited VPN</span>
+            <span class="card-title"><a href="https://protonvpn.com" target="_blank" rel="noopener noreferrer" class="card-link">Proton VPN ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-sec-protonvpn')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Swiss-jurisdiction zero-log network security tunnel providing unlimited bandwidth on its free tier without third-party advertisements.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Questionable free commercial VPNs and expensive recurring VPN plans ($60–$100/year).</div>
+          <ul class="guide-list">
+            <li><strong>Unlimited Bandwidth Free Tier:</strong> Legitimate, audited security solution providing unmetered data bandwidth with zero logging or ads.</li>
+            <li><strong>Strict Swiss Privacy Jurisdiction:</strong> Headquartered under Swiss data legislation outside 14-Eyes surveillance accords; safeguards campus Wi-Fi traffic.</li>
+          </ul>
+          <a href="https://protonvpn.com" target="_blank" rel="noopener noreferrer" class="direct-url">protonvpn.com ↗</a>
+        </div>
+      </article>
+
+      <!-- VeraCrypt -->
+      <article class="resource-card" id="card-sec-veracrypt">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-security">Disk Encryption</span>
+            <span class="card-title"><a href="https://www.veracrypt.fr" target="_blank" rel="noopener noreferrer" class="card-link">VeraCrypt ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-sec-veracrypt')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Industrial-grade full disk and on-the-fly container encryption featuring plausible deniability via hidden encrypted volumes.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Microsoft BitLocker (which is locked behind Windows Pro/Enterprise) and commercial disk encryption software.</div>
+          <ul class="guide-list">
+            <li><strong>Virtual Encrypted Drives:</strong> Formats standalone file containers or USB drives into encrypted partitions that mount only with custom passphrases.</li>
+            <li><strong>Plausible Deniability via Hidden Volumes:</strong> Nested hidden volume architecture ensures sensitive documents remain indistinguishable from random noise.</li>
+          </ul>
+          <a href="https://www.veracrypt.fr" target="_blank" rel="noopener noreferrer" class="direct-url">veracrypt.fr ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 8.0: DIGITAL WELLBEING & FOCUS -->
+    <div class="section-header" id="sec-digital-wellbeing">
+      <span class="section-index">§ 8.0</span>
+      <span>Digital Wellbeing, Focus & Anti-Distraction</span>
+    </div>
+
+    <div class="resource-list">
+
+      <!-- Cold Turkey Blocker -->
+      <article class="resource-card" id="card-foc-coldturkey">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-focus">Hardcore Lock</span>
+            <span class="card-title"><a href="https://getcoldturkey.com" target="_blank" rel="noopener noreferrer" class="card-link">Cold Turkey Blocker ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-foc-coldturkey')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Tamper-proof system blocker that cannot be killed via Task Manager or system clock adjustments once timers begin.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Freedom Commercial Subscription ($39.99/year) and easily bypassed browser plugins.</div>
+          <ul class="guide-list">
+            <li><strong>Tamper-Proof Focus Sessions:</strong> Once a block is activated, it cannot be bypassed by killing tasks, altering system clocks, or closing processes.</li>
+            <li><strong>Custom Allowlist / Blocklist Rules:</strong> Block distracting feeds while keeping Canvas, portals, library catalogs, and word processors accessible.</li>
+          </ul>
+          <a href="https://getcoldturkey.com" target="_blank" rel="noopener noreferrer" class="direct-url">getcoldturkey.com ↗</a>
+        </div>
+      </article>
+
+      <!-- SelfControl -->
+      <article class="resource-card" id="card-foc-selfcontrol">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-focus">macOS Routing Lock</span>
+            <span class="card-title"><a href="https://selfcontrolapp.com" target="_blank" rel="noopener noreferrer" class="card-link">SelfControl ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-foc-selfcontrol')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Irreversible domain blocker for macOS executing at the system routing level, persisting even through app quits and Mac restarts.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Freedom Commercial Subscription ($39.99/year) and lightweight browser blockers.</div>
+          <ul class="guide-list">
+            <li><strong>Tamper-Proof Routing Lockdown:</strong> Blocklist timers cannot be undone by quitting the application, restarting your Mac, or altering system time.</li>
+            <li><strong>Minimalist & Resource-Free:</strong> Fully open-source and executed locally at the system routing level with zero background overhead.</li>
+          </ul>
+          <a href="https://selfcontrolapp.com" target="_blank" rel="noopener noreferrer" class="direct-url">selfcontrolapp.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Pluckeye -->
+      <article class="resource-card" id="card-foc-pluckeye">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-focus">Delay Engine</span>
+            <span class="card-title"><a href="https://www.pluckeye.net" target="_blank" rel="noopener noreferrer" class="card-link">Pluckeye ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-foc-pluckeye')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Enforces mandatory configuration cooldown delays to prevent impulsive browsing while filtering out distracting web imagery.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Commercial parental control suites and restrictive monitoring software.</div>
+          <ul class="guide-list">
+            <li><strong>Configurable Delay Cooldowns:</strong> Mandatory waiting cooldown (e.g., 30 minutes to hours) before configuration changes take effect.</li>
+            <li><strong>Granular Visual Media Filtering:</strong> Blocks streaming media and images across unapproved domains while keeping raw text readable.</li>
+          </ul>
+          <a href="https://www.pluckeye.net" target="_blank" rel="noopener noreferrer" class="direct-url">pluckeye.net ↗</a>
+        </div>
+      </article>
+
+      <!-- Unhook -->
+      <article class="resource-card" id="card-foc-unhook">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-focus">Feed Cleaner</span>
+            <span class="card-title"><a href="https://unhook.app" target="_blank" rel="noopener noreferrer" class="card-link">Unhook ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-foc-unhook')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Suppresses algorithmic home feeds, sidebar recommendations, comments, and Shorts on YouTube without blocking tutorials.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Paid interface-cleaning utilities.</div>
+          <ul class="guide-list">
+            <li><strong>Targeted Algorithmic Suppression:</strong> Hides home feeds, sidebar recommendations, and Shorts across YouTube without blocking lectures.</li>
+            <li><strong>Intentional Search Mode:</strong> Keeps the search bar functional so you can find specific educational recordings without distraction.</li>
+          </ul>
+          <a href="https://unhook.app" target="_blank" rel="noopener noreferrer" class="direct-url">unhook.app ↗</a>
+        </div>
+      </article>
+
+      <!-- LeechBlock NG -->
+      <article class="resource-card" id="card-foc-leechblock">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-focus">Time Quota</span>
+            <span class="card-title"><a href="https://www.proginosko.com/leechblock/" target="_blank" rel="noopener noreferrer" class="card-link">LeechBlock NG ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-foc-leechblock')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Customizable browser time-budgeting extension enforcing hourly site limits and random 64-character typing challenges.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: StayFocusd and proprietary website limiter subscriptions.</div>
+          <ul class="guide-list">
+            <li><strong>Flexible Quota & Scheduling Matrix:</strong> Limit sites to 10 minutes per hour or block completely during specific study hours.</li>
+            <li><strong>Anti-Bypass Random Code Challenges:</strong> Prevents rule cancellations by requiring you to type a 64-character random string.</li>
+          </ul>
+          <a href="https://www.proginosko.com/leechblock/" target="_blank" rel="noopener noreferrer" class="direct-url">proginosko.com/leechblock ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- SECTION 9.0: GROUP PROJECTS & COLLABORATION -->
+    <div class="section-header" id="sec-group-projects">
+      <span class="section-index">§ 9.0</span>
+      <span>Group Projects & Lightweight Collaboration</span>
+    </div>
+
+    <div class="resource-list">
+
+      <!-- Rallly -->
+      <article class="resource-card" id="card-col-rallly">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-collab">Meeting Polling</span>
+            <span class="card-title"><a href="https://rallly.co" target="_blank" rel="noopener noreferrer" class="card-link">Rallly ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-col-rallly')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Clean open-source scheduling poll automatically rendering overlapping availability heatmaps without registration.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Doodle Paid Subscriptions (crowded with ads) and When2meet.</div>
+          <ul class="guide-list">
+            <li><strong>Link-Based Availability Heatmaps:</strong> The organizer picks candidate dates/times; members mark availability without creating accounts.</li>
+            <li><strong>Clean, Ad-Free Architecture:</strong> Transparent voting matrix completely free of banner ads and participant caps.</li>
+          </ul>
+          <a href="https://rallly.co" target="_blank" rel="noopener noreferrer" class="direct-url">rallly.co ↗</a>
+        </div>
+      </article>
+
+      <!-- CryptPad -->
+      <article class="resource-card" id="card-col-cryptpad">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-collab">Encrypted Docs</span>
+            <span class="card-title"><a href="https://cryptpad.fr" target="_blank" rel="noopener noreferrer" class="card-link">CryptPad ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-col-cryptpad')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Zero-knowledge client-side encrypted collaborative whiteboard, spreadsheet, and document editor requiring no account login.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Mandatory-account suites like Google Docs for ad-hoc group brainstorming.</div>
+          <ul class="guide-list">
+            <li><strong>Account-Free Real-Time Ideation:</strong> Co-write presentation drafts, assemble bibliographies, or outline topics without trading personal emails.</li>
+            <li><strong>Client-Side Zero-Knowledge Encryption:</strong> Encrypts input locally in the browser; export into Markdown, PDF, or open formats before leaving.</li>
+          </ul>
+          <a href="https://cryptpad.fr" target="_blank" rel="noopener noreferrer" class="direct-url">cryptpad.fr ↗</a>
+        </div>
+      </article>
+
+      <!-- StrawPoll -->
+      <article class="resource-card" id="card-col-strawpoll">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-collab">Topic Polling</span>
+            <span class="card-title"><a href="https://strawpoll.com" target="_blank" rel="noopener noreferrer" class="card-link">StrawPoll ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-col-strawpoll')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Instant topic and presentation role decision poll with IP/cookie anti-spam checks and clean visual chart results.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Chat app polls requiring mutual contacts and SurveyMonkey Freemium Tiers.</div>
+          <ul class="guide-list">
+            <li><strong>Rapid Decision-Making Cards:</strong> Build consensus on presentation topics or divide speaker roles in under 30 seconds with custom deadlines.</li>
+            <li><strong>Built-In Anti-Spam Protections:</strong> Enforces single-device voting via IP or cookie checks with transparent visual charts.</li>
+          </ul>
+          <a href="https://strawpoll.com" target="_blank" rel="noopener noreferrer" class="direct-url">strawpoll.com ↗</a>
+        </div>
+      </article>
+
+      <!-- Wormhole -->
+      <article class="resource-card" id="card-col-wormhole">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-collab">Ephemeral Transfer</span>
+            <span class="card-title"><a href="https://wormhole.app" target="_blank" rel="noopener noreferrer" class="card-link">Wormhole ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-col-wormhole')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Encrypted temporary file transfer pipeline passing uncompressed slide decks and videos up to 10GB with auto-expiration.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: WeTransfer Free Tier and social apps that compress video assets.</div>
+          <ul class="guide-list">
+            <li><strong>Frictionless Cross-OS Passing:</strong> Send raw video files or slide bundles up to 10GB across operating systems via an encrypted URL or QR code.</li>
+            <li><strong>Automated Expiration:</strong> End-to-end encryption with streaming downloads for files under 5GB, deleting payloads after downloads or 24 hours.</li>
+          </ul>
+          <a href="https://wormhole.app" target="_blank" rel="noopener noreferrer" class="direct-url">wormhole.app ↗</a>
+        </div>
+      </article>
+
+      <!-- HackMD -->
+      <article class="resource-card" id="card-col-hackmd">
+        <div class="card-top">
+          <div class="card-title-group">
+            <span class="pill pill-collab">Live Markdown Workspace</span>
+            <span class="card-title"><a href="https://hackmd.io" target="_blank" rel="noopener noreferrer" class="card-link">HackMD ↗</a></span>
+          </div>
+          <button class="toggle-btn" onclick="toggleCard('card-col-hackmd')"><span class="toggle-text">View Full Guide</span> ▾</button>
+        </div>
+        <p class="card-summary">Collaborative dual-pane Markdown lecture note and presentation script editor with MathJax formulas and live rendering.</p>
+        <div class="accordion-content">
+          <div class="guide-quote">Replaces: Fragile Word document swapping that creates conflicting draft files.</div>
+          <ul class="guide-list">
+            <li><strong>Dual-Pane Real-Time Presentation Scripting:</strong> Split-screen live preview editing where multi-user cursors remain visible without overwrite lag.</li>
+            <li><strong>MathJax & Technical Syntax Support:</strong> Formats mathematical notation and code blocks, exporting cleanly into PDF, HTML, or raw Markdown.</li>
+          </ul>
+          <a href="https://hackmd.io" target="_blank" rel="noopener noreferrer" class="direct-url">hackmd.io ↗</a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+
+  <!-- Vanilla Accordion State Controller -->
+  <script>
+    function toggleCard(cardId) {
+      const card = document.getElementById(cardId);
+      if (!card) return;
+      
+      const isExpanded = card.classList.contains('is-expanded');
+      const btnText = card.querySelector('.toggle-text');
+      const btn = card.querySelector('.toggle-btn');
+      
+      if (isExpanded) {
+        card.classList.remove('is-expanded');
+        if (btnText) btnText.textContent = 'View Full Guide';
+        if (btn) btn.innerHTML = '<span class="toggle-text">View Full Guide</span> ▾';
+      } else {
+        card.classList.add('is-expanded');
+        if (btnText) btnText.textContent = 'Collapse Guide';
+        if (btn) btn.innerHTML = '<span class="toggle-text">Collapse Guide</span> ▴';
+      }
+    }
+  </script>
+
+</body>
+</html>
+
